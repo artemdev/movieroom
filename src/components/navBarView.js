@@ -7,7 +7,7 @@ export default function NavBar(props) {
             <div>
                 <img src="" alt="" /> movieroom.com
             </div>
-            {signIn ? <div><a href="#">login</a> <a href="#">logout</a></div> : <div>username <button>logout</button></div>}
+            {signIn ? <div><a href="#">login</a> <a href="#">logout</a></div> : <div>username <a href="#">logout</a></div>}
 
         </header >
     )
