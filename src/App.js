@@ -1,24 +1,28 @@
-import logo from './logo.svg';
+import { Suspense } from 'react';
+import {
+  BrowserRouter as Router,
+  Route,
+  Switch
+} from 'react-router-dom'
+import NavBarView from './components/navBarView'
+import roomOpenResults from './components/views/roomResults/roomOpenResults'
+import roomClosedResults from './components/views/roomResults/roomClosedResults'
+import Container from './components/container'
 import './App.css';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Container>
+      <Router>
+        <Switch>
+          <NavBarView />
+          <Suspense fallback='Loading ...'>
+            <Route path='/closed' component={roomClosedResults} />
+            <Route path='/open' component={roomOpenResults} />
+          </Suspense>
+        </Switch>
+      </Router>
+    </Container>
   );
 }
 
