@@ -22,3 +22,24 @@ ul.gallery li {
     cursor: pointer;
     text-transform: uppercase
 }
+
+.winnerTitle {
+    width: 100%;
+    text-align: center;
+}
+.winnerWrap {
+    border-radius: 50%;
+    text-align: center;
+    font-size: 4em;
+    margin-bottom: 30px;
+}
+
+.winnerVotes {
+    width: 100%;
+    text-align: center;
+}
+.winnerCongratulations{
+    margin-top: 20px;
+    text-align: center;
+
+}
