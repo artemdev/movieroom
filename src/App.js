@@ -15,10 +15,10 @@ function App() {
     <Container>
       <Router>
         <Switch>
-          <NavBarView />
           <Suspense fallback='Loading ...'>
-            <Route path='/closed' component={roomClosedResults} />
-            <Route path='/open' component={roomOpenResults} />
+            <NavBarView />
+            <Route exact path='/closed' component={roomClosedResults} />
+            <Route exact path='/open' component={roomOpenResults} />
           </Suspense>
         </Switch>
       </Router>
