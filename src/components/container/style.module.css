@@ -1,0 +1,17 @@
+.container {
+
+  max-width: 1024px;
+  margin: 0 auto;
+}
+
+/* mobile  */
+@media(max-width: 767px) {
+.container {
+  max-width: 100%;
+  border: none;
+}
+.container section{
+  width: 100%;
+  border: none;
+}
+}
