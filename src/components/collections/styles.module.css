@@ -7,8 +7,10 @@
     position: absolute;
     top: 0;
     height: 100%;
+    width: 100%;
     display: flex;
     align-items: center;
+    justify-content: center;
     line-height: 28px;
     font-weight: 500;
     font-size: 25px;
@@ -16,7 +18,7 @@
 
 .collectionTitle {
     text-align: center;
-    margin-bottom: 20px;
+    margin-bottom: 40px;
     margin-top: 20px;
     color: white;
 }
@@ -26,6 +28,7 @@
     width: 250px;
     height: auto;
 }
+
 .collectionItem:hover {
     cursor: pointer;
 }
@@ -46,11 +49,40 @@
     text-align: center;
     color: white;
 }
+/* preview */
+.collectionPreviewItem {
+    width: 440px;
+    height: 200px;
+    display: flex;
+}
+.collectionPreviewImage {
+    width: 150px;
+    margin: 0 50px 20px 0;
+    /* height: auto; */
+}
 
+.collectionPreviewText {
+    display: flex;
+    align-items: center;
+}
+
+/* modal */
 .modalContent {
     width: 500px;
-
     background: linear-gradient(90deg, #c33764 0%, #1d2671 100%);
+}
+
+.modalCollectionImage {
+    width: 100px;
+    height: auto;
+    margin-right: 50px;
+}
+
+.modalCollectionBody {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    margin-bottom: 20px;
 }
 
 .modalHeader,
