@@ -4,11 +4,12 @@ import {
   Route,
   Switch
 } from 'react-router-dom'
-import NavBarView from './components/navBarView'
-import roomOpenResults from './components/views/roomResults/roomOpenResults'
-import roomClosedResults from './components/views/roomResults/roomClosedResults'
+import NavBarView from './components/navBar'
+import roomOpenResults from './components/roomResults/roomOpenResults'
+import roomClosedResults from './components/roomResults/roomClosedResults'
 import Container from './components/container'
 import './App.css';
+import Collections from './components/collections';
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
         <Switch>
           <Suspense fallback='Loading ...'>
             <NavBarView />
+            <Route exact path='/collections' component={Collections} />
             <Route exact path='/closed' component={roomClosedResults} />
             <Route exact path='/open' component={roomOpenResults} />
           </Suspense>
