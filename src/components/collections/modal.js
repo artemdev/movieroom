@@ -1,8 +1,10 @@
 import styles from './styles.module.css'
-export default function Modal({ show, collections, onClose }) {
+import ModalCollection from './modalCollection'
+export default function Modal({ show, collection, onClose }) {
     if (!show) {
         return null
     }
+    console.log(collection.movies)
     return (
 
         <div className={styles.modal}>
@@ -11,7 +13,11 @@ export default function Modal({ show, collections, onClose }) {
                     <h2 className={styles.modalTitle}>Романтические комедии</h2>
                 </div>
                 <div className={styles.modalBody}>
-                    {collections && collections.map(collection => <div>{collection.title}</div>)}
+                    {collection.movies && collection.movies.map(movie =>
+                        <div className={styles.modalCollectionBody}>
+                            <ModalCollection movie={movie}/>
+                        </div>
+                    )}
                 </div>
                 <div className={styles.modalFooter}>
                     <button onClick={onClose} className={styles.modalClose}>Отмена</button>
