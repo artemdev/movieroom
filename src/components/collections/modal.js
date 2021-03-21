@@ -1,15 +1,21 @@
 import styles from './styles.module.css';
 import ModalCollection from './modalCollection';
 import axios from 'axios';
+import React, { useState, useEffect } from 'react';
 // require('dotenv').config();
 // console.log(process.env.MOVIES_API_KEY); undefined :(
 const API_KEY = 'ca745db198ca3fbe8342f07480e09405';
 
-export default function Modal({ show, collection, onClose }) {
+export default function Modal({ show, onClose }) {
+    const [movies, setMovies] = useState([]);
+    useEffect(() => {
+        setMovies = getMovies();
+    }, []);
+
     if (!show) {
         return null;
     }
-    const getCollection = async e => {
+    const getMovies = async e => {
         e.preventDefault();
         const id = 10;
         const movies = await axios
@@ -21,12 +27,13 @@ export default function Modal({ show, collection, onClose }) {
         console.log(movies);
         return movies;
     };
+
     return (
         <div className={styles.modal}>
             <div className={styles.modalContent}>
                 <div className={styles.modalBody}>
-                    {collection.movies &&
-                        collection.movies.map((movie, i) => (
+                    {movies &&
+                        movies.map((movie, i) => (
                             <div key={i} className={styles.modalCollectionBody}>
                                 <ModalCollection movie={movie} />
                             </div>
@@ -36,10 +43,7 @@ export default function Modal({ show, collection, onClose }) {
                     <button onClick={onClose} className={styles.modalClose}>
                         Отмена
                     </button>
-                    <button
-                        onClick={getCollection}
-                        className={styles.modalNext}
-                    >
+                    <button onClick={getMovies} className={styles.modalNext}>
                         Выбрать
                     </button>
                 </div>
