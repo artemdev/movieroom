@@ -1,33 +1,15 @@
 import styles from './styles.module.css';
 import ModalCollection from './modalCollection';
-import axios from 'axios';
 import React, { useState, useEffect } from 'react';
+import fetchCollection from './api';
 // require('dotenv').config();
 // console.log(process.env.MOVIES_API_KEY); undefined :(
-const API_KEY = 'ca745db198ca3fbe8342f07480e09405';
 
-export default function Modal({ show, onClose }) {
-    const [movies, setMovies] = useState([]);
-    useEffect(() => {
-        setMovies = getMovies();
-    }, []);
-
+export default function Modal({ show, onClose, movies }) {
     if (!show) {
         return null;
     }
-    const getMovies = async e => {
-        e.preventDefault();
-        const id = 10;
-        const movies = await axios
-            .get(
-                `https://api.themoviedb.org/3/collection/${id}?api_key=${API_KEY}`,
-            )
-            .then(({ data }) => data.parts)
-            .catch(e => console.log(e));
-        console.log(movies);
-        return movies;
-    };
-
+    console.log(movies);
     return (
         <div className={styles.modal}>
             <div className={styles.modalContent}>
@@ -43,7 +25,10 @@ export default function Modal({ show, onClose }) {
                     <button onClick={onClose} className={styles.modalClose}>
                         Отмена
                     </button>
-                    <button onClick={getMovies} className={styles.modalNext}>
+                    <button
+                        onClick={fetchCollection}
+                        className={styles.modalNext}
+                    >
                         Выбрать
                     </button>
                 </div>
