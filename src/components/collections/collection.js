@@ -1,16 +1,17 @@
-
-
-import styles from './styles.module.css'
+import styles from './styles.module.css';
+const IMAGE_URL = 'https://image.tmdb.org/t/p/original/';
 
 export default function Collection({ collection }) {
-    console.log(collection)
-    return ( 
-                <>
-                    <img className={styles.collectionImage} src={collection.url} alt="" />
-                    <p className={styles.collectionText}>
-                        <h4>{collection.title}</h4>
-                    </p>
-                </>
-    )
-}  
-
+    return (
+        <>
+            <img
+                className={styles.collectionImage}
+                src={IMAGE_URL + collection.poster_path}
+                alt=""
+            />
+            <p className={styles.collectionText}>
+                <h4>{collection.name}</h4>
+            </p>
+        </>
+    );
+}
