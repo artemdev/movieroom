@@ -1,171 +1,14 @@
 import styles from './styles.module.css';
 import Modal from './modal';
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Collection from './collection';
+import fetchCollection from './api';
+
 export default function Collections() {
-    const initialCollections = [
-        {
-            id: 1,
-            title: 'One',
-            url: 'https://www.fillmurray.com/640/360',
-            movies: [
-                {
-                    title: 'one',
-                    year: '2020',
-                    genres: ['hello', 'world'],
-                    coverUrl: 'https://www.fillmurray.com/640/360',
-                    rating: '6.4',
-                    duration: '6.4',
-                },
-                {
-                    title: 'one',
-                    year: '2020',
-                    genres: ['hello', 'world'],
-                    coverUrl: 'https://www.fillmurray.com/640/360',
-                    rating: '6.4',
-                    duration: '6.4',
-                },
-                {
-                    title: 'one',
-                    year: '2020',
-                    genres: ['hello', 'world'],
-                    coverUrl: 'https://www.fillmurray.com/640/360',
-                    rating: '6.4',
-                    duration: '6.4',
-                },
-                {
-                    title: 'one',
-                    year: '2020',
-                    genres: ['hello', 'world'],
-                    coverUrl: 'https://www.fillmurray.com/640/360',
-                    rating: '6.4',
-                    duration: '6.4',
-                },
-                {
-                    title: 'one',
-                    year: '2020',
-                    genres: ['hello', 'world'],
-                    coverUrl: 'https://www.fillmurray.com/640/360',
-                    rating: '6.4',
-                    duration: '6.4',
-                },
-                {
-                    title: 'one',
-                    year: '2020',
-                    genres: ['hello', 'world'],
-                    coverUrl: 'https://www.fillmurray.com/640/360',
-                    rating: '6.4',
-                    duration: '6.4',
-                },
-                {
-                    title: 'one',
-                    year: '2020',
-                    genres: ['hello', 'world'],
-                    coverUrl: 'https://www.fillmurray.com/640/360',
-                    rating: '6.4',
-                    duration: '6.4',
-                },
-                {
-                    title: 'one',
-                    year: '2020',
-                    genres: ['hello', 'world'],
-                    coverUrl: 'https://www.fillmurray.com/640/360',
-                    rating: '6.4',
-                    duration: '6.4',
-                },
-                {
-                    title: 'one',
-                    year: '2020',
-                    genres: ['hello', 'world'],
-                    coverUrl: 'https://www.fillmurray.com/640/360',
-                    rating: '6.4',
-                    duration: '6.4',
-                },
-            ],
-        },
-        {
-            id: 1,
-            title: 'One',
-            url: 'https://www.fillmurray.com/640/360',
-            movies: [
-                {
-                    title: 'one',
-                    year: '2020',
-                    genres: ['hello', 'world'],
-                    coverUrl: 'https://www.fillmurray.com/640/360',
-                    rating: '6.4',
-                    duration: '6.4',
-                },
-            ],
-        },
-        {
-            id: 1,
-            title: 'One',
-            url: 'https://www.fillmurray.com/640/360',
-            movies: [
-                {
-                    title: 'one',
-                    year: '2020',
-                    genres: ['hello', 'world'],
-                    coverUrl: 'https://www.fillmurray.com/640/360',
-                    rating: '6.4',
-                    duration: '6.4',
-                },
-            ],
-        },
-        {
-            id: 1,
-            title: 'One',
-            url: 'https://www.fillmurray.com/640/360',
-            movies: [
-                {
-                    title: 'one',
-                    year: '2020',
-                    genres: ['hello', 'world'],
-                    coverUrl: 'https://www.fillmurray.com/640/360',
-                    rating: '6.4',
-                    duration: '6.4',
-                },
-            ],
-        },
-        {
-            id: 1,
-            title: 'One',
-            url: 'https://www.fillmurray.com/640/360',
-            movies: [
-                {
-                    title: 'one',
-                    year: '2020',
-                    genres: ['hello', 'world'],
-                    coverUrl: 'https://www.fillmurray.com/640/360',
-                    rating: '6.4',
-                    duration: '6.4',
-                },
-            ],
-        },
-        {
-            id: 1,
-            title: 'One',
-            url: 'https://www.fillmurray.com/640/360',
-            movies: [
-                {
-                    title: 'one',
-                    year: '2020',
-                    genres: ['hello', 'world'],
-                    coverUrl: 'https://www.fillmurray.com/640/360',
-                    rating: '6.4',
-                    duration: '6.4',
-                },
-            ],
-        },
-    ];
-
     const [show, setShow] = useState(false);
-    const [collections, setCollections] = useState(initialCollections);
+    const [collections, setCollections] = useState([]);
 
-    const [currentCollection, setCurrentCollection] = useState(
-        initialCollections[0],
-    );
+    const [currentCollection, setCurrentCollection] = useState([]);
 
     const openModalWithCollection = (collection = false) => {
         setShow(true);
@@ -173,6 +16,13 @@ export default function Collections() {
             setCurrentCollection(collection);
         }
     };
+    useEffect(() => {
+        (async function () {
+            const collection = await fetchCollection(10);
+            setCurrentCollection(collection);
+            setCollections([collection]);
+        })();
+    }, []);
     return (
         <>
             <div className={styles.collections}>
@@ -180,17 +30,18 @@ export default function Collections() {
                     Выберите коллекцию фильмов для голосования
                 </h2>
                 <ul className={styles.collectionsList}>
-                    {collections.map((collection, index) => (
-                        <li
-                            key={index}
-                            onClick={() => {
-                                openModalWithCollection(collection);
-                            }}
-                            className={styles.collectionItem}
-                        >
-                            <Collection collection={collection} />
-                        </li>
-                    ))}
+                    {collections &&
+                        collections.map((collection, index) => (
+                            <li
+                                key={index}
+                                onClick={() => {
+                                    openModalWithCollection(collection);
+                                }}
+                                className={styles.collectionItem}
+                            >
+                                <Collection collection={collection} />
+                            </li>
+                        ))}
                 </ul>
             </div>
             <Modal
@@ -198,7 +49,7 @@ export default function Collections() {
                 onClose={() => {
                     setShow(false);
                 }}
-                collection={currentCollection}
+                movies={currentCollection.parts}
             />
         </>
     );

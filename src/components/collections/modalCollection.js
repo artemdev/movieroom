@@ -1,11 +1,12 @@
 import styles from './styles.module.css';
+const IMAGE_URL = 'https://image.tmdb.org/t/p/original/';
 
 export default function Collection({ movie }) {
     return (
         <>
             <img
                 className={styles.modalCollectionImage}
-                src={movie.coverUrl}
+                src={IMAGE_URL + movie.backdrop_path}
                 alt=""
             />
             <p className={styles.modalCollectionText}>
