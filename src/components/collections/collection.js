@@ -1,7 +1,6 @@
 import styles from './styles.module.css';
 
 export default function Collection({ collection }) {
-    console.log(collection);
     return (
         <>
             <img

@@ -2,7 +2,6 @@ import styles from './styles.module.css';
 import Modal from './modal';
 import React, { useState } from 'react';
 import Collection from './collection';
-
 export default function Collections() {
     const initialCollections = [
         {
@@ -160,6 +159,7 @@ export default function Collections() {
             ],
         },
     ];
+
     const [show, setShow] = useState(false);
     const [collections, setCollections] = useState(initialCollections);
 
