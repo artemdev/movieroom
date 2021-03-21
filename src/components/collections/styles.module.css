@@ -15,6 +15,26 @@
     font-weight: 500;
     font-size: 25px;
 }
+.modalCollectionText span {
+    display: block;
+    font-family: Rubik;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 22px;
+    letter-spacing: 0em;
+    text-align: left;
+}
+
+.modalCollectionText h4 {
+    font-family: Rubik;
+    font-size: 26px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 31px;
+    letter-spacing: 0em;
+    text-align: left;
+}
 
 .collectionTitle {
     text-align: center;
@@ -37,7 +57,6 @@
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
-    width: 100%;
 }
 .collectionItem {
     font-family: Rubik;
@@ -68,26 +87,36 @@
 
 /* modal */
 .modalContent {
-    width: 500px;
+    /* width: 500px; */
     background: linear-gradient(90deg, #c33764 0%, #1d2671 100%);
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
 }
 
 .modalCollectionImage {
-    width: 100px;
+    width: 125px;
+    width: 185px;
     height: auto;
-    margin-right: 50px;
+    margin-right: 10px;
 }
 
 .modalCollectionBody {
+    /* position: fixed; */
     display: flex;
     align-items: center;
     flex-direction: row;
     margin-bottom: 20px;
+    width: 400px;
+}
+.modalCollectionBody:hover {
+    cursor: pointer;
 }
 
 .modalHeader,
 .modalFooter {
     padding: 10px;
+    margin: 0 auto;
 }
 
 .modalTitle {
@@ -96,8 +125,10 @@
 
 .modalBody {
     padding: 10px;
-    border-top: 1px solid #eee;
-    border-bottom: 1px solid #eee;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: space-between;
+    justify-content: center;
 }
 
 .modal {
@@ -111,6 +142,8 @@
     align-items: center;
     justify-content: center;
     color: white;
+    margin: 0 auto;
+    flex-direction: row;
 }
 
 .modalNext,
@@ -120,4 +153,5 @@
     border-radius: 50px;
     border: none;
     margin-right: 20px;
+    cursor: pointer;
 }
