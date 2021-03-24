@@ -1,24 +1,61 @@
-import logo from './logo.svg';
+import { useEffect, Suspense, lazy } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import { Switch } from 'react-router-dom';
+import AppBar from './components/AppBar';
+import PrivateRoute from './components/PrivateRoute';
+import PublicRoute from './components/PublicRoute';
+import Container from './components/Container/Container';
+import WelcomeView from './components/WelcomeView/WelcomeView';
+import Logo from './components/Logo/Logo';
 import './App.css';
+import { authOperations, authSelectors } from './redux/auth';
+
+const RegisterView = lazy(() => import('./views/RegisterView'));
+const LoginView = lazy(() => import('./views/LoginView'));
 
 function App() {
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(authOperations.fetchCurrentUser());
+  }, [dispatch]);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Container>
+      <Switch>
+        <Suspense fallback="Loading...">
+          <PublicRoute path="/" exact restricted redirectTo="/collections">
+            <WelcomeView logo={<Logo />}>
+              <AppBar />
+              <LoginView />
+            </WelcomeView>
+          </PublicRoute>
+          <PublicRoute path="/login" exact restricted redirectTo="/collections">
+            <WelcomeView logo={<Logo />}>
+              <AppBar />
+              <LoginView />
+            </WelcomeView>
+          </PublicRoute>
+          <PublicRoute
+            path="/register"
+            exact
+            restricted
+            redirectTo="/collections"
+          >
+            <WelcomeView logo={<Logo />}>
+              <AppBar />
+              <RegisterView />
+            </WelcomeView>
+          </PublicRoute>
+          <PrivateRoute path="/collections" redirectTo="/login">
+            {/* <CollectionsView /> */}
+          </PrivateRoute>
+          <PrivateRoute path="/room" redirectTo="/login">
+            {/* <RoomView /> */}
+          </PrivateRoute>
+        </Suspense>
+      </Switch>
+    </Container>
   );
 }
 
