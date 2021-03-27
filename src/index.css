@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /* @import url('https://fonts.googleapis.com/css2?family=Rubik:wght@400;500&display=swap'); */
 
 body {
@@ -7,9 +8,18 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+=======
+* {
+    margin: 0;
+    padding: 0;
+}
+body {
+    background: linear-gradient(90deg, #c33764 0%, #1d2671 100%);
+    font-family: Rubik;
+>>>>>>> master
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+ul {
+    list-style-type: none;
+    padding-inline-start: 0px;
 }

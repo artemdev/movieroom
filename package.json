@@ -14,6 +14,9 @@
     "lowdb": "^1.0.0",
     "modern-normalize": "^1.0.0",
     "prop-types": "^15.7.2",
+    "cors": "^2.8.5",
+    "micromodal": "^0.4.6",
+    "morgan": "^1.10.0",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-redux": "^7.2.2",
@@ -52,7 +55,13 @@
     "concurrently": "6.0.0",
     "husky": "^5.1.1",
     "lint-staged": "^10.5.4",
+<<<<<<< HEAD
     "nodemon": "2.0.7",
     "prettier": "^2.2.1"
+=======
+    "prettier": "^2.2.1",
+    "stylelint": "^13.12.0",
+    "stylelint-prettier": "^1.2.0"
+>>>>>>> master
   }
 }
