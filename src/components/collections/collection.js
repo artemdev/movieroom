@@ -9,9 +9,8 @@ export default function Collection({ collection }) {
                 src={IMAGE_URL + collection.poster_path}
                 alt=""
             />
-            <p className={styles.collectionText}>
-                <h4>{collection.name}</h4>
-            </p>
+
+            <h4 className={styles.collectionText}>{collection.name}</h4>
         </>
     );
 }
