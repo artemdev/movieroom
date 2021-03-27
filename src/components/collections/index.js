@@ -24,7 +24,7 @@ export default function Collections() {
         })();
     }, []);
     return (
-        <>
+        <div>
             <div className={styles.collections}>
                 <h2 className={styles.collectionTitle}>
                     Выберите коллекцию фильмов для голосования
@@ -51,6 +51,6 @@ export default function Collections() {
                 }}
                 movies={currentCollection.parts}
             />
-        </>
+        </div>
     );
 }

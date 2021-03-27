@@ -1,0 +1,13 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+body {
+    background: linear-gradient(90deg, #c33764 0%, #1d2671 100%);
+    font-family: Rubik;
+}
+
+ul {
+    list-style-type: none;
+    padding-inline-start: 0px;
+}

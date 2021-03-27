@@ -9,11 +9,9 @@ import WelcomeView from './components/WelcomeView/WelcomeView';
 import Logo from './components/Logo/Logo';
 import './App.css';
 import { authOperations, authSelectors } from './redux/auth';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
 import NavBarView from './components/navBar';
-import roomOpenResults from './components/roomResults/roomOpenResults';
-import roomClosedResults from './components/roomResults/roomClosedResults';
-import './App.css';
+import RoomOpenResults from './components/roomResults/roomOpenResults';
+import RoomClosedResults from './components/roomResults/roomClosedResults';
 import Collections from './components/collections';
 
 const RegisterView = lazy(() => import('./views/RegisterView'));
@@ -64,31 +62,19 @@ function App() {
                         </WelcomeView>
                     </PublicRoute>
                     <PublicRoute path="/collections" redirectTo="/login">
-                        {/* <CollectionsView /> */}
+                        <NavBarView />
+                        <Collections />
                     </PublicRoute>
-                    <PrivateRoute path="/room" redirectTo="/login">
-                        {/* <RoomView /> */}
-                    </PrivateRoute>
+                    <PublicRoute path="/closed" redirectTo="/login">
+                        <NavBarView />
+                        <RoomClosedResults />
+                    </PublicRoute>
+                    <PublicRoute path="/open" redirectTo="/login">
+                        <NavBarView />
+                        <RoomOpenResults />
+                    </PublicRoute>
                 </Suspense>
             </Switch>
-            <Router>
-                <Switch>
-                    <Suspense fallback="Loading ...">
-                        <NavBarView />
-                        <Route
-                            exact
-                            path="/collections"
-                            component={Collections}
-                        />
-                        <Route
-                            exact
-                            path="/closed"
-                            component={roomClosedResults}
-                        />
-                        <Route exact path="/open" component={roomOpenResults} />
-                    </Suspense>
-                </Switch>
-            </Router>
         </Container>
     );
 }
