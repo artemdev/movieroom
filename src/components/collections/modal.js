@@ -9,7 +9,6 @@ export default function Modal({ show, onClose, movies }) {
     const handleSubmit = () => {
         createRoom(movies);
         onClose();
-        console.log('room created');
     };
 
     return (

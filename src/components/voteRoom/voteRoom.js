@@ -3,11 +3,11 @@ import { getCollection, getGenres, getCredits } from '../../service/service';
 import { lazy, Suspense } from 'react';
 import SwiperCore, { Navigation, Pagination, Scrollbar, A11y } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import {
-    ThumbUpAltOutlined,
-    ThumbDownAltOutlined,
-    Translate,
-} from '@material-ui/icons';
+// import {
+//     ThumbUpAltOutlined,
+//     ThumbDownAltOutlined,
+//     Translate,
+// } from '@material-ui/icons';
 import s from './voteRoom.module.css';
 import 'swiper/swiper-bundle.min.css';
 import imageNotFound from '../../images/imageNotFound.png';
@@ -126,8 +126,9 @@ function VoteRoom() {
                                 slidesPerView={4}
                                 navigation
                             >
-                                {cast.map(person => (
+                                {cast.map((person, i) => (
                                     <SwiperSlide
+                                        key={i}
                                         className={s.personCard}
                                         activeslidekey={person.id}
                                     >
@@ -157,11 +158,11 @@ function VoteRoom() {
                     <div className={s.voteButtons}>
                         <button className={s.voteBtnDis} onClick={moveNext}>
                             {' '}
-                            <ThumbDownAltOutlined className={s.voteIcon} /> Не
+                            {/* <ThumbDownAltOutlined className={s.voteIcon} /> Не */}
                             нравится
                         </button>
                         <button className={s.voteBtnLike} onClick={moveNext}>
-                            <ThumbUpAltOutlined className={s.voteIcon} />
+                            {/* <ThumbUpAltOutlined className={s.voteIcon} /> */}
                             Нравится
                         </button>
                     </div>
