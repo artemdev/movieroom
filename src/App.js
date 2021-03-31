@@ -12,7 +12,7 @@ import { authOperations, authSelectors } from './redux/auth';
 import NavBarView from './components/NavBar';
 import RoomOpen from './components/Rooms/Open';
 import RoomClosed from './components/Rooms/Closed';
-import Collections from './components/collections';
+import Collections from './components/Collections';
 
 const RegisterView = lazy(() => import('./views/RegisterView'));
 const LoginView = lazy(() => import('./views/LoginView'));
