@@ -23,6 +23,7 @@ export default function Collections() {
             setCollections([collection]);
         })();
     }, []);
+    console.log(currentCollection);
     return (
         <div>
             <div className={styles.collections}>
