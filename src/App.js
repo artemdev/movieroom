@@ -9,10 +9,10 @@ import WelcomeView from './components/WelcomeView/WelcomeView';
 import Logo from './components/Logo/Logo';
 import './App.css';
 import { authOperations, authSelectors } from './redux/auth';
-import NavBarView from './components/navBar';
-import RoomOpenResults from './components/roomResults/roomOpenResults';
-import RoomClosedResults from './components/roomResults/roomClosedResults';
-import Collections from './components/collections';
+import NavBarView from './components/NavBar';
+import RoomOpen from './components/Rooms/Open';
+import RoomClosed from './components/Rooms/Closed';
+import Collections from './components/Collections';
 
 const RegisterView = lazy(() => import('./views/RegisterView'));
 const LoginView = lazy(() => import('./views/LoginView'));
@@ -67,11 +67,11 @@ function App() {
                     </PublicRoute>
                     <PublicRoute path="/closed" redirectTo="/login">
                         <NavBarView />
-                        <RoomClosedResults />
+                        <RoomClosed />
                     </PublicRoute>
                     <PublicRoute path="/open" redirectTo="/login">
                         <NavBarView />
-                        <RoomOpenResults />
+                        <RoomOpen />
                     </PublicRoute>
                 </Suspense>
             </Switch>
