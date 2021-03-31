@@ -1,15 +1,17 @@
 import styles from './styles.module.css';
 import ModalCollection from './modalCollection';
-import React, { useState, useEffect } from 'react';
-import fetchCollection from './api';
-// require('dotenv').config();
-// console.log(process.env.MOVIES_API_KEY); undefined :(
+import { createRoom } from './api';
 
 export default function Modal({ show, onClose, movies }) {
     if (!show) {
         return null;
     }
-    console.log(movies);
+    const handleSubmit = () => {
+        createRoom(movies);
+        onClose();
+        console.log('room created');
+    };
+
     return (
         <div className={styles.modal}>
             <div className={styles.modalContent}>
@@ -25,10 +27,8 @@ export default function Modal({ show, onClose, movies }) {
                     <button onClick={onClose} className={styles.modalClose}>
                         Отмена
                     </button>
-                    <button
-                        onClick={fetchCollection}
-                        className={styles.modalNext}
-                    >
+
+                    <button onClick={handleSubmit} className={styles.modalNext}>
                         Выбрать
                     </button>
                 </div>

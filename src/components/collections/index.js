@@ -1,8 +1,8 @@
 import styles from './styles.module.css';
 import Modal from './modal';
 import React, { useState, useEffect } from 'react';
-import Collection from './collection';
-import fetchCollection from './api';
+import Collection from './Collection';
+import { fetchCollection } from './api';
 
 export default function Collections() {
     const [show, setShow] = useState(false);
@@ -23,8 +23,9 @@ export default function Collections() {
             setCollections([collection]);
         })();
     }, []);
+    console.log(currentCollection);
     return (
-        <>
+        <div>
             <div className={styles.collections}>
                 <h2 className={styles.collectionTitle}>
                     Выберите коллекцию фильмов для голосования
@@ -51,6 +52,6 @@ export default function Collections() {
                 }}
                 movies={currentCollection.parts}
             />
-        </>
+        </div>
     );
 }
