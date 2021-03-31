@@ -1,3 +1,4 @@
+
 import { useEffect, Suspense, lazy } from 'react';
 import { useDispatch } from 'react-redux';
 import { Switch } from 'react-router-dom';
@@ -72,6 +73,10 @@ function App() {
                     <PublicRoute path="/open" redirectTo="/login">
                         <NavBarView />
                         <RoomOpen />
+                    </PublicRoute>
+      <PublicRoute path="/voteRoom" redirectTo="/login">
+                        <NavBarView />
+                        <VoteRoom />
                     </PublicRoute>
                 </Suspense>
             </Switch>
