@@ -1,4 +1,3 @@
-
 import { useEffect, Suspense, lazy } from 'react';
 import { useDispatch } from 'react-redux';
 import { Switch } from 'react-router-dom';
@@ -14,6 +13,7 @@ import NavBarView from './components/NavBar';
 import RoomOpen from './components/Rooms/Open';
 import RoomClosed from './components/Rooms/Closed';
 import Collections from './components/Collections';
+import VoteRoom from './components/voteRoom/voteRoom';
 
 const RegisterView = lazy(() => import('./views/RegisterView'));
 const LoginView = lazy(() => import('./views/LoginView'));
@@ -74,7 +74,7 @@ function App() {
                         <NavBarView />
                         <RoomOpen />
                     </PublicRoute>
-      <PublicRoute path="/voteRoom" redirectTo="/login">
+                    <PublicRoute path="/voteRoom" redirectTo="/login">
                         <NavBarView />
                         <VoteRoom />
                     </PublicRoute>
