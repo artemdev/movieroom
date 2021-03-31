@@ -9,7 +9,7 @@ export default function Collection({ movie }) {
                 src={IMAGE_URL + movie.backdrop_path}
                 alt=""
             />
-            <p className={styles.modalCollectionText}>
+            <div className={styles.modalCollectionText}>
                 <h4>{movie.title}</h4>
                 <span className={styles.modalCollectionRating}>
                     Рейтинг: {movie.rating}
@@ -30,7 +30,7 @@ export default function Collection({ movie }) {
                 <span className={styles.modalCollectionDuration}>
                     Продолжительность: {movie.duration}
                 </span>
-            </p>
+            </div>
         </>
     );
 }
