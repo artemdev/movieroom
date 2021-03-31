@@ -1,0 +1,159 @@
+.voteRoom {
+    padding: 50px 0 126px 0;
+}
+.navigation {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 50px;
+}
+.userInfo {
+    display: flex;
+    align-items: center;
+}
+.linkBtn,
+.shareBtn {
+    height: 50px;
+    width: 200px;
+    border-radius: 30px;
+}
+.linkBtn {
+    background: #ffffff;
+    border: 1px solid #ffffff;
+    color: #f50d5e;
+    margin-right: 40px;
+}
+.shareBtn {
+    background: transparent;
+    border: 1px solid #ffffff;
+    color: #ffffff;
+}
+.userName {
+    font-size: 26px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 31px;
+    letter-spacing: 0em;
+    color: #ffffff;
+    margin-right: 40px;
+}
+.exitBtn {
+    height: fit-content;
+    background: transparent;
+    border: none;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 21px;
+    letter-spacing: 0.02em;
+    color: #ffffff;
+}
+.movieDetails {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 50px;
+}
+.posterImage {
+    display: block;
+    width: 420px;
+    height: 600px;
+}
+.movieInfo {
+    width: 500px;
+}
+.voteButtons {
+    display: flex;
+    justify-content: space-around;
+}
+.voteBtnDis,
+.voteBtnLike {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 50px;
+    width: 350px;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    outline: none;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 22px;
+    color: #ffffff;
+}
+.voteBtnDis {
+    background: linear-gradient(
+        90deg,
+        #eb3349 0%,
+        rgba(244, 92, 67, 0.87) 100%
+    );
+}
+.voteBtnLike {
+    background: linear-gradient(90deg, #1d976c 30.73%, #5cfb97 100%);
+}
+.moviesTitle,
+.filmReleaseAndGenres,
+.filmOverview {
+    color: #ffffff;
+    margin-bottom: 14px;
+}
+
+.moviesTitle {
+    font-size: 41px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 49px;
+}
+.moviesOriginalTitle {
+    font-size: 26px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 31px;
+    color: #e0e0e0;
+    margin-bottom: 14px;
+}
+.filmRating,
+.releaseAndGenres {
+    display: flex;
+    margin-bottom: 14px;
+}
+.voteAverage,
+.voteTotalCount {
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 22px;
+    margin-right: 20px;
+    color: #ffc2f5;
+}
+.filmReleaseAndGenres {
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 22px;
+}
+.filmOverview {
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 22px;
+}
+
+.personImage {
+    display: block;
+    margin: 0 auto;
+    width: 100px;
+    height: 134px;
+    margin-bottom: 10px;
+}
+.personName {
+    color: #ffffff;
+    text-align: center;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 22px;
+}
+.voteIcon {
+    transform: translate(-15px);
+}

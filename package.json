@@ -1,4 +1,4 @@
-{
+
     "name": "movieroom",
     "version": "0.1.0",
     "private": true,
@@ -60,4 +60,3 @@
         "stylelint": "^13.12.0",
         "stylelint-prettier": "^1.2.0"
     }
-}
