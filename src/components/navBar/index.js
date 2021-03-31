@@ -11,11 +11,11 @@ export default function NavBar() {
                 </div>
                 {signIn ? (
                     <div className={styles.headerMenu}>
-                        Username <a href="#">выход</a>
+                        Username <a href="/#">выход</a>
                     </div>
                 ) : (
                     <div className={styles.headerMenu}>
-                        <a href="#">создать комнату</a>
+                        <a href="/#">создать комнату</a>
                     </div>
                 )}
             </header>

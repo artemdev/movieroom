@@ -1,14 +1,14 @@
 import { useEffect, Suspense, lazy } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { Switch } from 'react-router-dom';
 import AppBar from './components/AppBar';
-import PrivateRoute from './components/PrivateRoute';
+// import PrivateRoute from './components/PrivateRoute';
 import PublicRoute from './components/PublicRoute';
 import Container from './components/Container/Container';
 import WelcomeView from './components/WelcomeView/WelcomeView';
 import Logo from './components/Logo/Logo';
 import './App.css';
-import { authOperations, authSelectors } from './redux/auth';
+import { authOperations } from './redux/auth';
 import NavBarView from './components/NavBar';
 import RoomOpen from './components/Rooms/Open';
 import RoomClosed from './components/Rooms/Closed';
