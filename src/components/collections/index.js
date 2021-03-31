@@ -1,5 +1,5 @@
 import styles from './styles.module.css';
-import Modal from './Modal';
+import Modal from './modal';
 import React, { useState, useEffect } from 'react';
 import Collection from './Collection';
 import { fetchCollection } from './api';
