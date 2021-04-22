@@ -1,6 +1,7 @@
 * {
     margin: 0;
     padding: 0;
+    outline-style: none;
 }
 body {
     background: linear-gradient(90deg, #c33764 0%, #1d2671 100%);
