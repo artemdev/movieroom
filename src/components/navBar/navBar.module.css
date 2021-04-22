@@ -30,9 +30,32 @@
     margin-left: 60px;
 }
 .headerLogo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .headerLogo img {
     width: 495px;
     height: auto;
     margin-left: -80px;
+}
+
+@media (max-width: 767px) {
+    .navBar {
+        font-size: 12px;
+        padding: 0px;
+    }
+    .headerLogo img {
+        margin-left: 0;
+        width: 100%;
+    }
+    .headerMenu {
+        display: flex;
+        align-items: flex-end;
+        justify-content: flex-end;
+        margin-right: 10px;
+    }
+    .headerMenu a {
+        margin-left: 5px;
+    }
 }
