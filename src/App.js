@@ -6,6 +6,7 @@ import AppBar from './components/AppBar';
 import PublicRoute from './components/PublicRoute';
 import Container from './components/Container/Container';
 import WelcomeView from './components/WelcomeView/WelcomeView';
+import SubscribeView from './views/SubscribeView/';
 import Logo from './components/Logo/Logo';
 import './App.css';
 import { authOperations } from './redux/auth';
@@ -14,7 +15,6 @@ import RoomOpen from './components/Rooms/Open';
 import RoomClosed from './components/Rooms/Closed';
 import Collections from './components/Collections';
 import VoteRoom from './components/voteRoom/voteRoom';
-
 const RegisterView = lazy(() => import('./views/RegisterView'));
 const LoginView = lazy(() => import('./views/LoginView'));
 
@@ -39,6 +39,15 @@ function App() {
                             <AppBar />
                             <LoginView />
                         </WelcomeView>
+                    </PublicRoute>
+                    <PublicRoute
+                        path="/subscribe"
+                        exact
+                        restricted
+                        redirectTo="/subscribe"
+                    >
+                        <NavBarView />
+                        <SubscribeView />
                     </PublicRoute>
                     <PublicRoute
                         path="/login"

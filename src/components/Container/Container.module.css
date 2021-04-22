@@ -7,4 +7,11 @@
     height: 1024px;
     margin-left: auto;
     margin-right: auto;
+    background: linear-gradient(90deg, #c33764 0%, #1d2671 100%);
+}
+
+@media (max-width: 767px) {
+    .container {
+        width: 100%;
+    }
 }
