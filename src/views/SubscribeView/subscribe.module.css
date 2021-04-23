@@ -1,8 +1,9 @@
 .wrap {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     color: white;
+    width: 100%;
 }
 
 .intro h2 {
@@ -15,6 +16,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    width: 50%;
 }
 .formWrap {
     width: 50%;
