@@ -37,7 +37,7 @@
 .headerLogo img {
     width: 495px;
     height: auto;
-    margin-left: -80px;
+    /* margin-left: -80px; */
 }
 
 @media (max-width: 767px) {
