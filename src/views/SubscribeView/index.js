@@ -1,8 +1,20 @@
 import styles from './subscribe.module.css';
+import axios from 'axios';
 export default function SubscribeView() {
     const handleSubmit = e => {
         e.preventDefault();
-        console.log('write email to file');
+        try {
+            const url = 'http://movierooms.herokuapp.com/mailchimp/subscribe';
+            const email = e.target.email.value;
+            const body = {
+                email,
+            };
+            axios.post(url, body);
+            console.log('Email has been sent!');
+            //display thank you page
+        } catch (error) {
+            console.log(error);
+        }
     };
     return (
         <div className={styles.wrap}>

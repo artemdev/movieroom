@@ -122,6 +122,7 @@
     .wrap {
         flex-direction: column;
     }
+    .intro,
     .intro h2,
     .formWrap {
         width: 100%;
