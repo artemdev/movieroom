@@ -2,7 +2,7 @@ import styles from './navBar.module.css';
 import logo from '../../images/logo.png';
 
 export default function NavBar() {
-    const signIn = true;
+    const signIn = false;
     return (
         <>
             <header className={styles.navBar}>
