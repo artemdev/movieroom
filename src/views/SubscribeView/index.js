@@ -11,7 +11,10 @@ export default function SubscribeView() {
             };
             axios.post(url, body);
             console.log('Email has been sent!');
-            //display thank you page
+            //show thank you page
+            const thankYou = document.getElementById('thankYou');
+            e.currentTarget.style.visibility = 'hidden';
+            thankYou.className += ' ' + styles.thankYouBlockVisible;
         } catch (error) {
             console.log(error);
         }
@@ -40,6 +43,10 @@ export default function SubscribeView() {
                         Подписаться
                     </button>
                 </form>
+                <div id="thankYou" className={styles.thankYouBlock}>
+                    Thank you ! We received your email and will notify once the
+                    app is released
+                </div>
             </div>
         </div>
     );
