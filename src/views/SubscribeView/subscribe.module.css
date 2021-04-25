@@ -23,6 +23,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    position: relative;
 }
 .emailLabel {
     display: block;
@@ -115,6 +116,31 @@
 .intro h3,
 .intro p {
     width: 500px;
+}
+.thankYouBlock {
+    width: 500px;
+    position: absolute;
+    background-color: #690465;
+    border: 2px solid #fff;
+    border-radius: 10px;
+    color: #fff;
+    bottom: 0;
+    height: 0;
+    width: 100%;
+    visibility: hidden;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    padding: 20px;
+    overflow: hidden;
+}
+.thankYouBlockVisible {
+    display: flex;
+    height: 100%;
+    transition: height 3s ease 0s;
+    visibility: visible;
+    width: 90%;
 }
 
 /* mobile */
