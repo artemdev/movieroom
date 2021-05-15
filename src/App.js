@@ -29,12 +29,7 @@ function App() {
         <Container>
             <Switch>
                 <Suspense fallback="Loading...">
-                    <PublicRoute
-                        path="/login"
-                        exact
-                        restricted
-                        redirectTo="/collections"
-                    >
+                    <PublicRoute path="/login" exact redirectTo="/collections">
                         <WelcomeView logo={<Logo />}>
                             <AppBar />
                             <LoginView />
