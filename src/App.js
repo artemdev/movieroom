@@ -30,7 +30,7 @@ function App() {
             <Switch>
                 <Suspense fallback="Loading...">
                     <PublicRoute
-                        path="/"
+                        path="/login"
                         exact
                         restricted
                         redirectTo="/collections"
@@ -41,7 +41,7 @@ function App() {
                         </WelcomeView>
                     </PublicRoute>
                     <PublicRoute
-                        path="/subscribe"
+                        path="/"
                         exact
                         restricted
                         redirectTo="/subscribe"
