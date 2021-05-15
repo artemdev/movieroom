@@ -2,12 +2,12 @@ import styles from './styles.module.css';
 import ModalCollection from './modalCollection';
 import { createRoom } from './api';
 
-export default function Modal({ show, onClose, movies }) {
+export default function Modal({ show, onClose, movies, name }) {
     if (!show) {
         return null;
     }
     const handleSubmit = () => {
-        createRoom(movies);
+        const room = createRoom(movies, name);
         onClose();
     };
 
