@@ -51,6 +51,7 @@ export default function Collections() {
                     setShow(false);
                 }}
                 movies={currentCollection.parts}
+                name={currentCollection.name}
             />
         </div>
     );
