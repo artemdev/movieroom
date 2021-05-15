@@ -1,7 +1,7 @@
 import styles from './styles.module.css';
 import Modal from './modal';
 import React, { useState, useEffect } from 'react';
-import Collection from './Collection';
+import Collection from './collection';
 import { fetchCollection } from './api';
 
 export default function Collections() {
