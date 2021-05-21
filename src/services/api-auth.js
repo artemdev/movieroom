@@ -1,20 +1,21 @@
 import axios from 'axios';
 
-axios.defaults.baseURL = 'http://localhost:4040';
+axios.defaults.baseURL = 'https://movierooms.herokuapp.com';
 
 export const token = {
-  set(token) {
-    axios.defaults.headers.common.Authorization = `Bearer ${token}`;
-  },
-  unset() {
-    axios.defaults.headers.common.Authorization = '';
-  },
+    set(token) {
+        axios.defaults.headers.common.Authorization = `Bearer ${token}`;
+    },
+    unset() {
+        axios.defaults.headers.common.Authorization = '';
+    },
 };
 
-export const register = credentials => axios.post('/users/signup', credentials);
+export const register = credentials =>
+    axios.post('/auth/register', credentials);
 
-export const logIn = credentials => axios.post('/users/login', credentials);
+export const logIn = credentials => axios.post('/auth/login', credentials);
 
-export const logOut = () => axios.post('/users/logout');
+export const logOut = () => axios.post('/auth/logout');
 
-export const fetchCurrentUser = () => axios.get('/users/current');
+export const fetchCurrentUser = () => axios.get('/auth/current');
