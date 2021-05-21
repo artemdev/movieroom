@@ -1,13 +1,13 @@
-import styles from './navBar.module.css';
+import styles from './styles.module.css';
 import logo from '../../images/logo.png';
 
 export default function NavBar() {
-    const signIn = false;
+    const signIn = true;
     return (
         <>
             <header className={styles.navBar}>
                 <div className={styles.headerLogo}>
-                    <img src={logo} alt="" />
+                    <img className={styles.headerImage} src={logo} alt="" />
                 </div>
                 {signIn ? (
                     <div className={styles.headerMenu}>
