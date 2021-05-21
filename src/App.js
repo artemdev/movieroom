@@ -4,7 +4,7 @@ import { Switch } from 'react-router-dom';
 import AppBar from './components/AppBar';
 // import PrivateRoute from './components/PrivateRoute';
 import PublicRoute from './components/PublicRoute';
-import Container from './components/Container/Container';
+import Container from './components/Container';
 import WelcomeView from './components/WelcomeView/WelcomeView';
 import Logo from './components/Logo/Logo';
 import './App.css';
