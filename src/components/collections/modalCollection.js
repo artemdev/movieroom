@@ -12,28 +12,23 @@ export default function Collection({ movie }) {
             <div className={styles.modalCollectionText}>
                 <h4>{movie.title}</h4>
                 <span className={styles.modalCollectionRating}>
-                    8 film.ru 72 зрители
+                    Рейтинг: {movie.rating}
                 </span>
                 <span className={styles.modalCollectionGenres}>
-                    Жанры: Драма
-                    {/* {movie.genres &&
+                    Жанры:{' '}
+                    {movie.genres &&
                         movie.genres.map((genre, i) => {
                             if (i !== movie.genres.length - 1) {
                                 genre = `${genre}, `;
                             }
                             return genre;
-                        })} */}
+                        })}
                 </span>
                 <span className={styles.modalCollectionYear}>
-                    Год создания: 2020
-                    {/* {movie.year} */}
+                    Год создания: {movie.year}
                 </span>
                 <span className={styles.modalCollectionDuration}>
-                    Страна: Дания, Швеция, Нидерланды
-                </span>
-                <span className={styles.modalCollectionDuration}>
-                    Продолжительность: 1 час 57 минут
-                    {/* {movie.duration} */}
+                    Продолжительность: {movie.duration}
                 </span>
             </div>
         </>

@@ -23,9 +23,9 @@ export default function Collections() {
             setCollections([collection]);
         })();
     }, []);
-
+    console.log(currentCollection);
     return (
-        <>
+        <div>
             <div className={styles.collections}>
                 <h2 className={styles.collectionTitle}>
                     Выберите коллекцию фильмов для голосования
@@ -51,8 +51,7 @@ export default function Collections() {
                     setShow(false);
                 }}
                 movies={currentCollection.parts}
-                name={currentCollection.name}
             />
-        </>
+        </div>
     );
 }

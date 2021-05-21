@@ -171,9 +171,9 @@ export const fetchCollections = async () => {
     }
 };
 
-export const createRoom = async (movies, name) => {
+export const createRoom = async movies => {
     try {
-        await axios.post(`${API_BACKEND}/api/rooms`, { name, movies });
+        await axios.post(`${API_BACKEND}/api/rooms/create`, { movies });
     } catch (error) {
         console.log(error);
     }
