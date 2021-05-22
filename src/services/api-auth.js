@@ -1,6 +1,7 @@
 import axios from 'axios';
+import { API_BACKEND } from '../helpers/routes';
 
-axios.defaults.baseURL = 'https://movierooms.herokuapp.com';
+axios.defaults.baseURL = API_BACKEND;
 
 export const token = {
     set(token) {

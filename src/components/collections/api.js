@@ -1,5 +1,6 @@
 import axios from 'axios';
-const API_BACKEND = 'https://movierooms.herokuapp.com';
+import { CREATE_ROOM_URL, API_BACKEND } from '../../helpers/routes';
+
 const mockup = {
     id: 10,
     name: 'Star Wars Collection',
@@ -173,7 +174,7 @@ export const fetchCollections = async () => {
 
 export const createRoom = async movies => {
     try {
-        await axios.post(`${API_BACKEND}/api/rooms/create`, { movies });
+        await axios.post(CREATE_ROOM_URL, { movies });
     } catch (error) {
         console.log(error);
     }
