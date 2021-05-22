@@ -3,6 +3,10 @@
     opacity: 0.4;
 }
 
+.collections {
+    height: 100%;
+}
+
 .collectionText {
     position: absolute;
     top: 0;
@@ -87,17 +91,36 @@
 }
 
 /* modal */
+.modal {
+    position: fixed;
+    left: 0;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    overflow-y: auto;
+    width: 100%;
+    color: white;
+    flex-direction: row;
+    background: rgb(0, 0, 0, 0.8);
+}
+
 .modalContent {
-    /* width: 500px; */
-    background: linear-gradient(90deg, #c33764 0%, #1d2671 100%);
+    margin-top: 20px;
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: auto;
+    background: linear-gradient(90deg, #c33764 0%, #1d2671 100%);
 }
 
 .modalCollectionImage {
     width: 125px;
-    width: 185px;
+    height: 185px;
     height: auto;
     margin-right: 10px;
 }
@@ -105,10 +128,12 @@
 .modalCollectionBody {
     /* position: fixed; */
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     flex-direction: row;
-    margin-bottom: 20px;
-    width: 400px;
+    justify-content: flex-start;
+    margin: 0 2% 10px 10px;
+    width: 46%;
+    height: 193px;
 }
 .modalCollectionBody:hover {
     cursor: pointer;
@@ -125,26 +150,15 @@
 }
 
 .modalBody {
-    padding: 10px;
     display: flex;
     flex-wrap: wrap;
-    align-items: space-between;
-    justify-content: center;
+    justify-content: flex-start;
+    max-width: 1024px;
+    width: 100%;
+    font-size: 16px;
 }
-
-.modal {
-    position: fixed;
-    left: 0;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    background-color: rgba(0, 0, 0, 0.5);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: white;
-    margin: 0 auto;
-    flex-direction: row;
+.modalCollectionRating {
+    color: #ffc2f5;
 }
 
 .modalNext,
@@ -152,7 +166,19 @@
     width: 180px;
     height: 50px;
     border-radius: 50px;
-    border: none;
+
     margin-right: 20px;
     cursor: pointer;
+}
+
+.modalClose {
+    background-color: transparent;
+    border: 1px solid white;
+    color: white;
+}
+
+.modalNext {
+    background-color: white;
+    color: #f50d5e;
+    border: none;
 }
