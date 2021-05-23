@@ -31,7 +31,6 @@ const logIn = createAsyncThunk(
             const { data } = await API.logIn(credentials);
 
             API.token.set(data.token);
-
             return data;
         } catch (error) {
             if (error.response.status === 400) {
