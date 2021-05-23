@@ -4,6 +4,7 @@ import { Switch } from 'react-router-dom';
 import AppBar from './components/AppBar';
 // import PrivateRoute from './components/PrivateRoute';
 import PublicRoute from './components/PublicRoute';
+import PrivateRoute from './components/PrivateRoute';
 import Container from './components/Container';
 import WelcomeView from './components/WelcomeView/WelcomeView';
 import SubscribeView from './views/SubscribeView/';
@@ -66,10 +67,10 @@ function App() {
                             <RegisterView />
                         </WelcomeView>
                     </PublicRoute>
-                    <PublicRoute path="/collections" redirectTo="/login">
+                    <PrivateRoute path="/collections" redirectTo="/login">
                         <NavBarView />
                         <Collections />
-                    </PublicRoute>
+                    </PrivateRoute>
                     <PublicRoute path="/closed" redirectTo="/login">
                         <NavBarView />
                         <RoomClosed />
