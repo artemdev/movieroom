@@ -1,5 +1,5 @@
 import styles from './styles.module.css';
-import { IMAGE_URL } from '../../helpers/routes';
+const IMAGE_URL = 'https://image.tmdb.org/t/p/original/';
 
 export default function Collection({ movie }) {
     return (
