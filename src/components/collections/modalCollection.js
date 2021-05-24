@@ -6,30 +6,30 @@ export default function Collection({ movie }) {
         <>
             <img
                 className={styles.modalCollectionImage}
-                src={IMAGE_URL + movie.backdrop_path}
+                src={IMAGE_URL + movie.poster_path}
                 alt=""
             />
             <div className={styles.modalCollectionText}>
                 <h4>{movie.title}</h4>
                 <span className={styles.modalCollectionRating}>
-                    Рейтинг: {movie.rating}
+                    Рейтинг: {movie.vote_average}
                 </span>
                 <span className={styles.modalCollectionGenres}>
-                    Жанры:{' '}
-                    {movie.genres &&
-                        movie.genres.map((genre, i) => {
-                            if (i !== movie.genres.length - 1) {
+                    Жанры:
+                    {movie.genre_ids &&
+                        movie.genre_ids.map((genre, i) => {
+                            if (i !== movie.genre_ids.length - 1) {
                                 genre = `${genre}, `;
                             }
                             return genre;
                         })}
                 </span>
                 <span className={styles.modalCollectionYear}>
-                    Год создания: {movie.year}
+                    Год создания: {movie.release_date.split('-')[0]}
                 </span>
-                <span className={styles.modalCollectionDuration}>
+                {/* <span className={styles.modalCollectionDuration}>
                     Продолжительность: {movie.duration}
-                </span>
+                </span> */}
             </div>
         </>
     );
