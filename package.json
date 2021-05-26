@@ -16,6 +16,7 @@
         "micromodal": "^0.4.6",
         "modern-normalize": "^1.0.0",
         "morgan": "^1.10.0",
+        "node-sass": "^6.0.0",
         "prop-types": "^15.7.2",
         "react": "^17.0.1",
         "react-dom": "^17.0.1",
