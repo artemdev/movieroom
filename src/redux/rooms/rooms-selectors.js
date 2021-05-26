@@ -1,4 +1,4 @@
-const getIsOpen = state => state.room.isOpen;
+const getIsOpen = state => state.rooms.isOpen;
 
 const roomsSelectors = {
     getIsOpen,
