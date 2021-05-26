@@ -1,0 +1,17 @@
+.btn {
+    font-size: 26px;
+    border-style: none;
+    background: #95068f;
+    width: 400px;
+    height: 60px;
+    border: 2px solid rgba(255, 255, 255, 0.6);
+    box-sizing: border-box;
+    border-radius: 30px;
+    box-shadow: inset -0.622917px 1.24583px 0.622917px rgba(255, 255, 255, 0.5);
+    cursor: pointer;
+}
+
+.btn:hover,
+.btn:focus {
+    background: rgba(255, 55, 128, 0.2);
+}
