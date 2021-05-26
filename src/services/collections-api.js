@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { CREATE_ROOM_URL, API_BACKEND } from '../../helpers/routes';
+import { API_BACKEND } from '../helpers/routes';
 
 const mockup = {
     id: 10,
@@ -167,14 +167,6 @@ const mockup = {
 export const fetchCollections = async () => {
     try {
         return await axios.get(`${API_BACKEND}/api/collections/}`);
-    } catch (error) {
-        console.log(error);
-    }
-};
-
-export const createRoom = async movies => {
-    try {
-        await axios.post(CREATE_ROOM_URL, { movies });
     } catch (error) {
         console.log(error);
     }
