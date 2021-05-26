@@ -2,9 +2,9 @@ import styles from './styles.module.css';
 import Modal from './modal';
 import React, { useState, useEffect } from 'react';
 import Collection from './collection';
-import { fetchCollection } from './api';
+import { fetchCollection } from '../../services/collections-api';
 
-export default function Collections() {
+export default function Collections(props) {
     const [show, setShow] = useState(false);
     const [collections, setCollections] = useState([]);
 
@@ -23,7 +23,10 @@ export default function Collections() {
             setCollections([collection]);
         })();
     }, []);
-    console.log(currentCollection);
+
+    // import { Route, Redirect } from 'react-router-dom';
+    // <Redirect to={redirectTo} />;
+
     return (
         <div>
             <div className={styles.collections}>
