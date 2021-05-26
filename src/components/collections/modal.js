@@ -1,13 +1,16 @@
 import styles from './styles.module.css';
 import ModalCollection from './modalCollection';
-import { createRoom } from './api';
-
+import { roomsOperations } from '../../redux/rooms/index';
+import { useDispatch } from 'react-redux';
 export default function Modal({ show, onClose, movies }) {
+    const dispatch = useDispatch();
     if (!show) {
         return null;
     }
     const handleSubmit = () => {
-        createRoom(movies);
+        dispatch(roomsOperations.create(movies));
+        //обновить стейт переменной openRoom: true
+        console.log('set open room to true');
         onClose();
     };
 

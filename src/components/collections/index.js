@@ -2,7 +2,7 @@ import styles from './styles.module.css';
 import Modal from './modal';
 import React, { useState, useEffect } from 'react';
 import Collection from './collection';
-import { fetchCollection } from './api';
+import { fetchCollection } from '../../services/collections-api';
 
 export default function Collections() {
     const [show, setShow] = useState(false);
