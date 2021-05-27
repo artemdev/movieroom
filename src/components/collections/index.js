@@ -16,7 +16,7 @@ export default function Collections(props) {
     const roomOpened = useSelector(roomsSelectors.getIsOpen);
 
     if (roomOpened) {
-        window.location = '/rooms';
+        window.location = '/rooms/results';
     }
 
     const openModalWithCollection = (collection = false) => {

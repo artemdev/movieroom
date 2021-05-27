@@ -18,6 +18,7 @@ import Collections from './components/collections';
 import VoteRoom from './components/voteRoom/voteRoom';
 const RegisterView = lazy(() => import('./views/RegisterView'));
 const LoginView = lazy(() => import('./views/LoginView'));
+const ResultsView = lazy(() => import('./views/RoomView/results'));
 
 function App() {
     const dispatch = useDispatch();
@@ -71,6 +72,9 @@ function App() {
                         <NavBarView />
                         <Collections />
                     </PrivateRoute>
+                    <PublicRoute path="/rooms/results">
+                        <ResultsView />
+                    </PublicRoute>
                     <PublicRoute path="/closed" redirectTo="/login">
                         <NavBarView />
                         <RoomClosed />
