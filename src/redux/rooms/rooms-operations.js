@@ -7,8 +7,6 @@ import { CREATE_ROOM_URL } from '../../helpers/routes';
 const create = createAsyncThunk(
     'rooms/create',
     async (movies, { rejectWithValue, getState }) => {
-        console.log('token is', null);
-
         const state = getState();
 
         const persistedToken = state.auth.token;

@@ -2,6 +2,8 @@ import styles from './styles.module.css';
 import Modal from './modal';
 import React, { useState, useEffect } from 'react';
 import Collection from './collection';
+import { roomsSelectors } from '../../redux/rooms';
+import { useSelector } from 'react-redux';
 import { fetchCollection } from '../../services/collections-api';
 
 export default function Collections(props) {
@@ -9,6 +11,13 @@ export default function Collections(props) {
     const [collections, setCollections] = useState([]);
 
     const [currentCollection, setCurrentCollection] = useState([]);
+
+    // redirect when room is opened
+    const roomOpened = useSelector(roomsSelectors.getIsOpen);
+
+    if (roomOpened) {
+        window.location = '/rooms';
+    }
 
     const openModalWithCollection = (collection = false) => {
         setShow(true);
