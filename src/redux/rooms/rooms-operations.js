@@ -1,5 +1,4 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
-import * as API from '../../services/rooms-api';
 import axios from 'axios';
 import { token } from '../../services/api-auth';
 import { CREATE_ROOM_URL } from '../../helpers/routes';
@@ -7,8 +6,6 @@ import { CREATE_ROOM_URL } from '../../helpers/routes';
 const create = createAsyncThunk(
     'rooms/create',
     async (movies, { rejectWithValue, getState }) => {
-        console.log('token is', null);
-
         const state = getState();
 
         const persistedToken = state.auth.token;
@@ -30,9 +27,15 @@ const create = createAsyncThunk(
         }
     },
 );
-
+const exit = createAsyncThunk(
+    'rooms/exit',
+    async (_, { rejectWithValue, getState }) => {
+        return true;
+    },
+);
 const operations = {
     create,
+    exit,
 };
 
 export default operations;
