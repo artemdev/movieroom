@@ -9,14 +9,17 @@ const roomSlice = createSlice({
     name: 'room',
     initialState,
     extraReducers: {
-        [roomsOperations.create.fulfilled](state, _) {
-            state.isOpen = true;
+        [roomsOperations.create.fulfilled](state, action) {
+            state.isOpen = action.payload._id;
         },
-        [roomsOperations.create.pending](state) {
+        [roomsOperations.create.pending](state, _) {
             state.isOpen = undefined;
         },
-        [roomsOperations.create.rejected](state) {
-            state.isFetchingCurrentUser = false;
+        [roomsOperations.create.rejected](state, _) {
+            state.isOpen = false;
+        },
+        [roomsOperations.exit.fulfilled](state, _) {
+            state.isOpen = false;
         },
     },
 });

@@ -27,11 +27,16 @@ const authPersistConfig = {
     storage,
     whitelist: ['token'],
 };
+const roomsPersistConfig = {
+    key: 'rooms',
+    storage,
+    whitelist: ['isOpen'],
+};
 
 export const store = configureStore({
     reducer: {
         auth: persistReducer(authPersistConfig, authReducer),
-        rooms: roomsReducer,
+        rooms: persistReducer(roomsPersistConfig, roomsReducer),
     },
     middleware,
     devTools: process.env.NODE_ENV === 'development',
