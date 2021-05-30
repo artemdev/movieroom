@@ -1,9 +1,12 @@
 import styles from './styles.module.css';
 import logo from '../../images/logo.png';
+import { useDispatch } from 'react-redux';
+import { authOperations } from '../../redux/auth';
 
 export default function NavBar() {
     const signIn = true;
     const signOut = 'Выйти';
+    const dispatch = useDispatch();
     return (
         <>
             <header className={styles.navBar}>
@@ -12,7 +15,12 @@ export default function NavBar() {
                 </div>
                 {signIn ? (
                     <div className={styles.headerMenu}>
-                        <a href="/#">{signOut}</a>
+                        <button
+                            type="button"
+                            onClick={() => dispatch(authOperations.logOut())}
+                        >
+                            {signOut}
+                        </button>
                     </div>
                 ) : (
                     <div className={styles.headerMenu}>

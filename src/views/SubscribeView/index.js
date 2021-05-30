@@ -39,7 +39,7 @@ export default function SubscribeView() {
                         placeholder="Ваш имейл"
                     />
 
-                    <button type="submit" class={styles.subscribeBtn}>
+                    <button type="submit" className={styles.subscribeBtn}>
                         Подписаться
                     </button>
                 </form>
