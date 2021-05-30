@@ -29,10 +29,13 @@
     position: relative;
 }
 
-.passInput {
+.passInput,
+.passInputV {
     position: absolute;
     right: 21px;
     bottom: 50%;
+}
+.passInput {
     transform: translateY(50%);
 }
 
