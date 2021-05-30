@@ -12,14 +12,12 @@ import Logo from './components/Logo/Logo';
 import './App.css';
 import { authOperations } from './redux/auth';
 import NavBarView from './components/navBar';
-import RoomOpen from './components/Rooms/Open';
-import RoomClosed from './components/Rooms/Closed';
 import Collections from './components/collections';
 import VoteRoom from './components/voteRoom/voteRoom';
 const RegisterView = lazy(() => import('./views/RegisterView'));
 const LoginView = lazy(() => import('./views/LoginView'));
-const ResultsView = lazy(() => import('./views/RoomView/results'));
-
+const RoomOpen = lazy(() => import('./components/Rooms/Open'));
+const RoomClosed = lazy(() => import('./components/Rooms/Closed'));
 function App() {
     const dispatch = useDispatch();
 
@@ -72,14 +70,11 @@ function App() {
                         <NavBarView />
                         <Collections />
                     </PrivateRoute>
-                    <PublicRoute path="/rooms/results">
-                        <ResultsView />
-                    </PublicRoute>
                     <PublicRoute path="/closed" redirectTo="/login">
                         <NavBarView />
                         <RoomClosed />
                     </PublicRoute>
-                    <PublicRoute path="/open" redirectTo="/login">
+                    <PublicRoute path="/rooms/open" redirectTo="/login">
                         <NavBarView />
                         <RoomOpen />
                     </PublicRoute>
