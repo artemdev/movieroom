@@ -3,6 +3,7 @@ import logo from '../../images/logo.png';
 
 export default function NavBar() {
     const signIn = true;
+    const signOut = 'Выйти';
     return (
         <>
             <header className={styles.navBar}>
@@ -11,11 +12,11 @@ export default function NavBar() {
                 </div>
                 {signIn ? (
                     <div className={styles.headerMenu}>
-                        Username <a href="/#">выход</a>
+                        <a href="/#">{signOut}</a>
                     </div>
                 ) : (
                     <div className={styles.headerMenu}>
-                        <a href="/#">создать комнату</a>
+                        <a href="/#">Создать комнату</a>
                     </div>
                 )}
             </header>
