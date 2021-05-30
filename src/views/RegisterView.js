@@ -81,8 +81,10 @@ export default function RegisterView() {
                         <div className={s.checkboxTitle}>Запомнить меня</div>
                     </label>
                     <p className={s.title}>
-                        Регистрируя новый профиль, вы принимаете условия{' '}
-                        <a href="#">пользовательского соглашения</a>
+                        Регистрируя новый профиль, вы принимаете условия
+                        <span>
+                            <a href="!#">пользовательского соглашения</a>
+                        </span>
                     </p>
                 </form>
             </div>
