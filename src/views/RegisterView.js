@@ -96,18 +96,6 @@ export default function RegisterView() {
                             />
                         </svg>
                     </label>
-
-                    {/* <Button title={signUp}></Button>
-                    <label className={s.checkbox}>
-                        <input type="checkbox" name="saveMe" />
-                        <div className={s.checkboxTitle}>Запомнить меня</div>
-                    </label>
-                    <p className={s.title}>
-                        Регистрируя новый профиль, вы принимаете условия
-                        <span>
-                            <a href="!#">пользовательского соглашения</a>
-                        </span>
-                    </p> */}
                 </form>
                 <Button title={signUp}></Button>
                 <label className={s.checkbox}>
