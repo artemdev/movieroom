@@ -7,8 +7,8 @@ import s from './RegisterView.module.css';
 export default function RegisterView() {
     const signUp = 'Создать комнату';
     const Name = 'Имя';
-    const Password = 'Введите Ваш имейл';
-    const Email = 'Введите пароль';
+    const Email = 'Введите Ваш имейл';
+    const Password = 'Введите пароль';
     const dispatch = useDispatch();
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
