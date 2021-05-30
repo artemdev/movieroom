@@ -16,7 +16,7 @@ export default function NavBar() {
                     </div>
                 ) : (
                     <div className={styles.headerMenu}>
-                        <a href="/#">создать комнату</a>
+                        <a href="/#">Создать комнату</a>
                     </div>
                 )}
             </header>
