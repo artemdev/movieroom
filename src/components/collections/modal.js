@@ -5,6 +5,8 @@ import { roomsOperations } from '../../redux/rooms';
 import { useDispatch } from 'react-redux';
 
 export default function Modal({ show, onClose, movies }) {
+    //делаем запрос к API за жанрами
+
     const dispatch = useDispatch();
     if (!show) {
         return null;
