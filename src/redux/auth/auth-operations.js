@@ -1,22 +1,26 @@
 import * as API from '../../services/api-auth';
 import { createAsyncThunk } from '@reduxjs/toolkit';
+import { toast } from 'react-toastify';
 
 const register = createAsyncThunk(
     'auth/register',
     async (credentials, { rejectWithValue }) => {
         try {
             const { data } = await API.register(credentials);
-
             API.token.set(data.token);
-
             return data;
         } catch (error) {
+            if (error.response.status === 409) {
+                toast.error('Account with this email is already exist!');
+            }
             if (error.response.status === 400) {
                 console.error('Account with this email is already exist!');
+                toast.error('Account with this email is already exist!');
             }
 
             if (error.response.status === 500) {
                 console.error('Server is currently unavailable!');
+                toast.error('Server is currently unavailable!');
             }
 
             return rejectWithValue(error.message);
@@ -33,10 +37,12 @@ const logIn = createAsyncThunk(
             API.token.set(data.token);
             return data;
         } catch (error) {
+            //TODO 400
             if (error.response.status === 400) {
+                toast.error('There is no user with this email and password!');
                 console.error('There is no user with this email and password!');
             }
-
+            toast.error('There is no user with this email and password!');
             return rejectWithValue(error.message);
         }
     },
@@ -51,10 +57,12 @@ const logOut = createAsyncThunk(
             API.token.unset();
         } catch (error) {
             if (error.response.status === 401) {
+                toast.error('You are not authorized!');
                 console.error('You are not authorized!');
             }
 
             if (error.response.status === 500) {
+                toast.error('Server is currently unavailable!');
                 console.error('Server is currently unavailable!');
             }
 
@@ -81,6 +89,7 @@ const fetchCurrentUser = createAsyncThunk(
             return data;
         } catch (error) {
             if (error.response.status === 401) {
+                toast.error('You are not authorized!');
                 console.error('You are not authorized!');
             }
 
