@@ -59,3 +59,29 @@
         margin-left: 5px;
     }
 }
+/* .label {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    clip-path: inset(50%);
+    border: 0;
+} */
+.btn {
+    background-color: transparent;
+    outline: none;
+    border-style: none;
+}
+
+.btn {
+    color: #ffffff;
+    transition: color 0.4s;
+}
+
+.btn:hover,
+.btn:focus {
+    color: #c33764;
+}
