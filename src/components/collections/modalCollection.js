@@ -1,7 +1,7 @@
 import styles from './styles.module.css';
 const IMAGE_URL = 'https://image.tmdb.org/t/p/original/';
 
-export default function collection({ movie }) {
+export default function Collection({ movie }) {
     const showGenres = genre_ids => {
         const apiGenres = [
             {
@@ -100,11 +100,21 @@ export default function collection({ movie }) {
 
     return (
         <>
-            <img
-                className={styles.modalCollectionImage}
-                src={IMAGE_URL + movie.poster_path}
-                alt=""
-            />
+            <div className={styles.placeholder}>
+                <div
+                    className="myimage"
+                    style={{
+                        backgroundImage: 'url(placeholder.jpg)',
+                    }}
+                >
+                    <img
+                        className={styles.modalCollectionImage}
+                        src={IMAGE_URL + movie.poster_path}
+                        alt=""
+                    />
+                </div>
+            </div>
+
             <div className={styles.modalCollectionText}>
                 <h4>{movie.title}</h4>
                 <span className={styles.modalCollectionRating}>
