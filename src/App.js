@@ -11,9 +11,12 @@ import SubscribeView from './views/SubscribeView/';
 import Logo from './components/Logo/Logo';
 import './App.css';
 import { authOperations } from './redux/auth';
-import NavBarView from './components/navBar';
+import NavBarView from './components/NavBar';
 import Collections from './components/collections';
 import VoteRoom from './components/voteRoom/voteRoom';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 const RegisterView = lazy(() => import('./views/RegisterView'));
 const LoginView = lazy(() => import('./views/LoginView'));
 const RoomOpen = lazy(() => import('./components/Rooms/Open'));
@@ -26,65 +29,78 @@ function App() {
     }, [dispatch]);
 
     return (
-        <Container>
-            <Switch>
-                <Suspense fallback="Loading...">
-                    <PublicRoute path="/login" exact redirectTo="/collections">
+        <>
+            <Container>
+                <Switch>
+                    <Suspense fallback="Loading...">
+                        {/* <PublicRoute path="/login" exact redirectTo="/collections">
                         <WelcomeView logo={<Logo />}>
                             <AppBar />
                             <LoginView />
                         </WelcomeView>
-                    </PublicRoute>
-                    <PublicRoute
-                        path="/"
-                        exact
-                        restricted
-                        redirectTo="/subscribe"
-                    >
-                        <NavBarView />
-                        <SubscribeView />
-                    </PublicRoute>
-                    <PublicRoute
-                        path="/login"
-                        exact
-                        restricted
-                        redirectTo="/collections"
-                    >
-                        <WelcomeView logo={<Logo />}>
-                            <AppBar />
-                            <LoginView />
-                        </WelcomeView>
-                    </PublicRoute>
-                    <PublicRoute
-                        path="/register"
-                        exact
-                        restricted
-                        redirectTo="/collections"
-                    >
-                        <WelcomeView logo={<Logo />}>
-                            <AppBar />
-                            <RegisterView />
-                        </WelcomeView>
-                    </PublicRoute>
-                    <PrivateRoute path="/collections" redirectTo="/login">
-                        <NavBarView />
-                        <Collections />
-                    </PrivateRoute>
-                    <PublicRoute path="/closed" redirectTo="/login">
-                        <NavBarView />
-                        <RoomClosed />
-                    </PublicRoute>
-                    <PublicRoute path="/rooms/open" redirectTo="/login">
-                        <NavBarView />
-                        <RoomOpen />
-                    </PublicRoute>
-                    <PublicRoute path="/voteRoom" redirectTo="/login">
-                        <NavBarView />
-                        <VoteRoom />
-                    </PublicRoute>
-                </Suspense>
-            </Switch>
-        </Container>
+                    </PublicRoute> */}
+                        <PublicRoute
+                            path="/"
+                            exact
+                            restricted
+                            redirectTo="/subscribe"
+                        >
+                            <NavBarView />
+                            <SubscribeView />
+                        </PublicRoute>
+                        <PublicRoute
+                            path="/login"
+                            exact
+                            restricted
+                            redirectTo="/collections"
+                        >
+                            <WelcomeView logo={<Logo />}>
+                                <AppBar />
+                                <LoginView />
+                            </WelcomeView>
+                        </PublicRoute>
+                        <PublicRoute
+                            path="/register"
+                            exact
+                            restricted
+                            redirectTo="/collections"
+                        >
+                            <WelcomeView logo={<Logo />}>
+                                <AppBar />
+                                <RegisterView />
+                            </WelcomeView>
+                        </PublicRoute>
+                        <PrivateRoute path="/collections" redirectTo="/login">
+                            <NavBarView />
+                            <Collections />
+                        </PrivateRoute>
+                        <PublicRoute path="/closed" redirectTo="/login">
+                            <NavBarView />
+                            <RoomClosed />
+                        </PublicRoute>
+                        <PublicRoute path="/rooms/open" redirectTo="/login">
+                            <NavBarView />
+                            <RoomOpen />
+                        </PublicRoute>
+                        <PublicRoute path="/voteRoom" redirectTo="/login">
+                            <NavBarView />
+                            <VoteRoom />
+                        </PublicRoute>
+                    </Suspense>
+                </Switch>
+                <ToastContainer
+                    position="top-right"
+                    autoClose={5000}
+                    hideProgressBar={false}
+                    newestOnTop={false}
+                    closeOnClick
+                    rtl={false}
+                    pauseOnFocusLoss
+                    draggable
+                    pauseOnHover
+                />
+            </Container>
+        </>
     );
 }
 
