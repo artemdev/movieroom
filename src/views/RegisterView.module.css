@@ -31,6 +31,7 @@
 
 .passInput,
 .passInputV {
+    cursor: pointer;
     position: absolute;
     right: 21px;
     bottom: 50%;
