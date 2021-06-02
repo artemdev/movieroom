@@ -5,10 +5,10 @@ const formSchema = yup.object().shape({
         .string()
         .min(2, 'Имя должно быть больше 2 символов')
         .max(50, 'Слишком длинное имя'),
-    email: yup.string().email().required(),
+    email: yup.string().email().required('Обязательное поле для заполнения'),
     password: yup
         .string()
-        .required()
+        .required('Обязательное поле для заполнения')
         .min(
             8,
             'Должен содержать как минимум одну цифру, одну заглавную и строчную букву и как минимум 8 или более символов.',
