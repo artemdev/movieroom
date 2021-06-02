@@ -19,4 +19,5 @@ export const logIn = credentials => axios.post('/auth/login', credentials);
 
 export const logOut = () => axios.post('/auth/logout');
 
+// export const fetchCurrentUser = () => axios.get('/auth/refresh');
 export const fetchCurrentUser = () => axios.get('/users/current');

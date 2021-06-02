@@ -3,6 +3,8 @@ import { useDispatch } from 'react-redux';
 import { authOperations } from '../redux/auth';
 import Button from '../components/Button';
 import s from './RegisterView.module.css';
+import formSchema from '../helpers/formSchema';
+import { Formik, Form, Field, ErrorMessage } from 'formik';
 
 export default function LoginView() {
     const Login = 'Войти в комнату';
@@ -13,24 +15,6 @@ export default function LoginView() {
     const [password, setPassword] = useState('');
     const [hidePassword, setHidePassword] = useState(true);
 
-    const handleChange = ({ target: { name, value } }) => {
-        switch (name) {
-            case 'email':
-                return setEmail(value);
-            case 'password':
-                return setPassword(value);
-            default:
-                return;
-        }
-    };
-
-    const handleSubmit = e => {
-        e.preventDefault();
-
-        dispatch(authOperations.logIn({ email, password }));
-        setEmail('');
-        setPassword('');
-    };
     const showPassword = () => {
         setHidePassword(false);
         if (hidePassword === false) {
@@ -40,34 +24,41 @@ export default function LoginView() {
 
     return (
         <>
-            <div>
-                <form
-                    onSubmit={handleSubmit}
-                    className={s.form}
-                    autoComplete="on"
-                >
-                    <label className={s.label}>
-                        <input
+            <Formik
+                initialValues={{ name: '', password: '', email: '' }}
+                validationSchema={formSchema}
+                onSubmit={(values, { setSubmitting }) => {
+                    setTimeout(() => {
+                        dispatch(authOperations.logIn({ email, password }));
+                        setEmail('');
+                        setPassword('');
+                        setSubmitting(false);
+                    }, 400);
+                }}
+            >
+                <Form className={s.form} autoComplete="on">
+                    <label htmlFor="email" className={s.label}>
+                        <Field
+                            name="email"
                             className={s.input}
                             type="email"
-                            name="email"
-                            value={email}
-                            onChange={handleChange}
                             placeholder={Email}
                         />
+                        <ErrorMessage name="email" />
                     </label>
-                    <label className={`${s.label}  ${s.pass}`}>
-                        <input
+                    <label
+                        htmlFor="password"
+                        className={`${s.label}  ${s.pass}`}
+                    >
+                        <Field
+                            name="password"
                             className={s.input}
                             type={hidePassword ? 'password' : 'text'}
-                            name="password"
-                            value={password}
-                            onChange={handleChange}
                             placeholder={Password}
                         />
                         <svg
                             onClick={() => showPassword()}
-                            className={s.passInputV}
+                            className={s.passInput}
                             width="24"
                             height="25"
                             viewBox="0 0 24 25"
@@ -79,11 +70,11 @@ export default function LoginView() {
                                 fill="white"
                             />
                         </svg>
+                        <ErrorMessage name="password" />
                     </label>
-
                     <Button title={Login}></Button>
-                </form>
-            </div>
+                </Form>
+            </Formik>
         </>
     );
 }
