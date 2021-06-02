@@ -3,6 +3,9 @@ import { useDispatch } from 'react-redux';
 import { authOperations } from '../redux/auth';
 import Button from '../components/Button';
 import s from './RegisterView.module.css';
+import formSchema from '../helpers/formSchema';
+import { Formik, Form, Field, ErrorMessage } from 'formik';
+// import { Formik } from 'formik';
 
 export default function RegisterView() {
     const signUp = 'Создать комнату';
@@ -15,18 +18,6 @@ export default function RegisterView() {
     const [password, setPassword] = useState('');
     const [hidePassword, setHidePassword] = useState(true);
 
-    const handleChange = ({ target: { name, value } }) => {
-        switch (name) {
-            case 'name':
-                return setName(value);
-            case 'email':
-                return setEmail(value);
-            case 'password':
-                return setPassword(value);
-            default:
-                return;
-        }
-    };
     const showPassword = () => {
         setHidePassword(false);
         if (hidePassword === false) {
@@ -34,51 +25,51 @@ export default function RegisterView() {
         }
     };
 
-    const handleSubmit = event => {
-        event.preventDefault();
-        dispatch(authOperations.register({ name, email, password }));
-        setName('');
-        setEmail('');
-        setPassword('');
-    };
-
     return (
         <>
-            <div>
-                <form
-                    onSubmit={handleSubmit}
-                    className={s.form}
-                    autoComplete="on"
-                >
-                    <label className={s.label}>
-                        <input
+            <Formik
+                initialValues={{ name: '', password: '', email: '' }}
+                validationSchema={formSchema}
+                onSubmit={(values, { setSubmitting }) => {
+                    setTimeout(() => {
+                        dispatch(
+                            authOperations.register({ name, email, password }),
+                        );
+                        setName('');
+                        setEmail('');
+                        setPassword('');
+                        setSubmitting(false);
+                    }, 400);
+                }}
+            >
+                <Form className={s.form} autoComplete="on">
+                    <label htmlFor="name" className={s.label}>
+                        <Field
+                            name="name"
                             className={s.input}
                             type="text"
-                            name="name"
-                            value={name}
-                            onChange={handleChange}
                             placeholder={Name}
                         />
+                        <ErrorMessage name="name" />
                     </label>
 
-                    <label className={s.label}>
-                        <input
+                    <label htmlFor="email" className={s.label}>
+                        <Field
+                            name="email"
                             className={s.input}
                             type="email"
-                            name="email"
-                            value={email}
-                            onChange={handleChange}
                             placeholder={Email}
                         />
+                        <ErrorMessage name="email" />
                     </label>
-
-                    <label className={`${s.label}  ${s.pass}`}>
-                        <input
+                    <label
+                        htmlFor="password"
+                        className={`${s.label}  ${s.pass}`}
+                    >
+                        <Field
+                            name="password"
                             className={s.input}
                             type={hidePassword ? 'password' : 'text'}
-                            name="password"
-                            value={password}
-                            onChange={handleChange}
                             placeholder={Password}
                         />
                         <svg
@@ -95,20 +86,22 @@ export default function RegisterView() {
                                 fill="white"
                             />
                         </svg>
+                        <ErrorMessage name="password" />
                     </label>
-                </form>
-                <Button title={signUp}></Button>
-                <label className={s.checkbox}>
-                    <input type="checkbox" name="saveMe" />
-                    <div className={s.checkboxTitle}>Запомнить меня</div>
-                </label>
-                <p className={s.title}>
-                    Регистрируя новый профиль, вы принимаете условия
-                    <span>
-                        <a href="!#">пользовательского соглашения</a>
-                    </span>
-                </p>
-            </div>
+                    <Button title={signUp}></Button>
+                </Form>
+            </Formik>
+
+            <label className={s.checkbox}>
+                <input type="checkbox" name="saveMe" />
+                <div className={s.checkboxTitle}>Запомнить меня</div>
+            </label>
+            <p className={s.title}>
+                Регистрируя новый профиль, вы принимаете условия
+                <span>
+                    <a href="!#">пользовательского соглашения</a>
+                </span>
+            </p>
         </>
     );
 }
