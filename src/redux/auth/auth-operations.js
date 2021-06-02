@@ -22,7 +22,7 @@ const register = createAsyncThunk(
                 console.error('Server is currently unavailable!');
                 toast.error('Server is currently unavailable!');
             }
-
+            toast.error('Server is currently unavailable!');
             return rejectWithValue(error.message);
         }
     },
