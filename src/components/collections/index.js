@@ -4,7 +4,7 @@ import React, { useState, useEffect } from 'react';
 import Collection from './collection';
 import { roomsSelectors } from '../../redux/rooms';
 import { useSelector } from 'react-redux';
-import { fetchCollection } from '../../services/collections-api';
+import { fetchCollections } from '../../services/collections-api';
 
 export default function Collections(props) {
     const [show, setShow] = useState(false);
@@ -27,9 +27,10 @@ export default function Collections(props) {
     };
     useEffect(() => {
         (async function () {
-            const collection = await fetchCollection(10);
-            setCurrentCollection(collection);
-            setCollections([collection]);
+            const { data } = await fetchCollections();
+            console.log('collections are', data);
+            setCurrentCollection(data[0]);
+            setCollections(data);
         })();
     }, []);
 
@@ -37,26 +38,24 @@ export default function Collections(props) {
     // <Redirect to={redirectTo} />;
 
     return (
-        <div>
-            <div className={styles.collections}>
-                <h2 className={styles.collectionTitle}>
-                    Выберите коллекцию фильмов для голосования
-                </h2>
-                <ul className={styles.collectionsList}>
-                    {collections &&
-                        collections.map((collection, index) => (
-                            <li
-                                key={index}
-                                onClick={() => {
-                                    openModalWithCollection(collection);
-                                }}
-                                className={styles.collectionItem}
-                            >
-                                <Collection collection={collection} />
-                            </li>
-                        ))}
-                </ul>
-            </div>
+        <div className={styles.collections}>
+            <h2 className={styles.collectionTitle}>
+                Выберите коллекцию фильмов для голосования
+            </h2>
+            <ul className={styles.collectionsList}>
+                {collections &&
+                    collections.map((collection, index) => (
+                        <li
+                            key={index}
+                            onClick={() => {
+                                openModalWithCollection(collection);
+                            }}
+                            className={styles.collectionItem}
+                        >
+                            <Collection collection={collection} />
+                        </li>
+                    ))}
+            </ul>
             <Modal
                 show={show}
                 onClose={() => {
