@@ -6,7 +6,7 @@ export default function Collection({ collection }) {
         <>
             <img
                 className={styles.collectionImage}
-                src={IMAGE_URL + collection.poster_path}
+                src={IMAGE_URL + collection.parts[0].poster_path}
                 alt=""
             />
 
