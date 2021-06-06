@@ -28,10 +28,17 @@ export default function LoginView() {
                 initialValues={{ name: '', password: '', email: '' }}
                 validationSchema={formSchema}
                 onSubmit={(values, { setSubmitting }) => {
+                    const { email } = values;
+                    const { password } = values;
                     setTimeout(() => {
-                        dispatch(authOperations.logIn({ email, password }));
-                        setEmail('');
-                        setPassword('');
+                        dispatch(
+                            authOperations.logIn({
+                                email,
+                                password,
+                            }),
+                        );
+                        setEmail(email);
+                        setPassword(password);
                         setSubmitting(false);
                     }, 400);
                 }}
