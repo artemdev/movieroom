@@ -38,26 +38,24 @@ export default function Collections(props) {
     // <Redirect to={redirectTo} />;
 
     return (
-        <div>
-            <div className={styles.collections}>
-                <h2 className={styles.collectionTitle}>
-                    Выберите коллекцию фильмов для голосования
-                </h2>
-                <ul className={styles.collectionsList}>
-                    {collections &&
-                        collections.map((collection, index) => (
-                            <li
-                                key={index}
-                                onClick={() => {
-                                    openModalWithCollection(collection);
-                                }}
-                                className={styles.collectionItem}
-                            >
-                                <Collection collection={collection} />
-                            </li>
-                        ))}
-                </ul>
-            </div>
+        <div className={styles.collections}>
+            <h2 className={styles.collectionTitle}>
+                Выберите коллекцию фильмов для голосования
+            </h2>
+            <ul className={styles.collectionsList}>
+                {collections &&
+                    collections.map((collection, index) => (
+                        <li
+                            key={index}
+                            onClick={() => {
+                                openModalWithCollection(collection);
+                            }}
+                            className={styles.collectionItem}
+                        >
+                            <Collection collection={collection} />
+                        </li>
+                    ))}
+            </ul>
             <Modal
                 show={show}
                 onClose={() => {
