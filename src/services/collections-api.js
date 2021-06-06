@@ -166,7 +166,7 @@ const mockup = {
 };
 export const fetchCollections = async () => {
     try {
-        return await axios.get(`${API_BACKEND}/api/collections/}`);
+        return await axios.get(`${API_BACKEND}/collections`);
     } catch (error) {
         console.log(error);
     }
