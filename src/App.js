@@ -17,8 +17,8 @@ import VoteRoom from './components/voteRoom/voteRoom';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
-const RegisterView = lazy(() => import('./views/RegisterView'));
-const LoginView = lazy(() => import('./views/LoginView'));
+const RegisterView = lazy(() => import('./views/Login/RegisterView'));
+const LoginView = lazy(() => import('./views/Login/LoginView'));
 const RoomOpen = lazy(() => import('./components/Rooms/Open'));
 const RoomClosed = lazy(() => import('./components/Rooms/Closed'));
 function App() {

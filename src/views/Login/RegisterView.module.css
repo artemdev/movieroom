@@ -1,15 +1,13 @@
 .form {
-    /* width: 320px; */
     padding-top: 50px;
 }
 
 .label {
     display: flex;
     flex-direction: column;
-    margin-bottom: 15px;
 }
 .label:not(:last-child) {
-    padding-bottom: 25px;
+    margin-bottom: 25px;
 }
 
 .input {
@@ -29,17 +27,6 @@
     position: relative;
 }
 
-.passInput,
-.passInputV {
-    cursor: pointer;
-    position: absolute;
-    right: 21px;
-    bottom: 50%;
-}
-.passInput {
-    transform: translateY(50%);
-}
-
 .input::placeholder {
     /* padding-left: 21px; */
     color: #ffffff;
@@ -56,6 +43,32 @@
     font-size: 14px;
     font-weight: 300;
 }
-/* .title {
-    width: 305px;
-} */
+
+.notVisiblePass,
+.visiblePass {
+    cursor: pointer;
+    position: absolute;
+    right: 21px;
+    width: 24px;
+    height: 24px;
+    background-repeat: no-repeat;
+    background-position: center;
+    /* fill: rgba(255, 255, 255, 0.3); */
+
+    fill-opacity: 0.3;
+}
+
+.notVisiblePass {
+    top: 14px;
+    background-image: url(../../images/notVisiblePass.svg);
+}
+.visiblePass {
+    top: 13px;
+    background-image: url(../../images/visiblePass.svg);
+}
+.error {
+    padding-left: 21px;
+    margin-top: 10px;
+    font-size: 16px;
+    color: red;
+}
