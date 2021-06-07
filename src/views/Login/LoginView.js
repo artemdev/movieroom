@@ -25,9 +25,10 @@ export default function LoginView() {
     return (
         <>
             <Formik
-                initialValues={{ name: '', password: '', email: '' }}
+                initialValues={{ password: '', email: '' }}
                 validationSchema={formSchema}
                 onSubmit={(values, { setSubmitting }) => {
+                    const { email, password } = values;
                     setTimeout(() => {
                         dispatch(authOperations.logIn({ email, password }));
                         setEmail('');
