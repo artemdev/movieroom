@@ -31,6 +31,8 @@ export default function RegisterView() {
                 initialValues={{ name: '', password: '', email: '' }}
                 validationSchema={formSchema}
                 onSubmit={(values, { setSubmitting }) => {
+                    const { email, password, name } = values;
+
                     setTimeout(() => {
                         dispatch(
                             authOperations.register({ name, email, password }),

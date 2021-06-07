@@ -1,53 +1,60 @@
 .welcome {
-  width: 100%;
-  height: 100%;
-  padding-top: 65px;
-  padding-bottom: 65px;
-  padding-left: 120px;
-  padding-right: 120px;
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
+    width: 100%;
+    height: 100%;
+    padding-top: 65px;
+    padding-bottom: 65px;
+    padding-left: 120px;
+    padding-right: 120px;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    /* background-image: linear-gradient(
+            to right,
+            rgba(255, 78, 135, 0.9),
+            rgba(29, 38, 113, 0.9)
+        ),
+        url(../../images/); */
 }
 
 .main {
-  display: flex;
-  flex-direction: row;
-  align-items: flex-start;
-  justify-content: flex-start;
-  color: #ffffff;
-  font-family: 'Rubik', sans-serif;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: flex-start;
+    color: #ffffff;
+    font-family: 'Rubik', sans-serif;
 }
 
 .description {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: center;
-  width: 590px;
-  padding-top: 220px;
-  margin-right: 110px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    width: 590px;
+    padding-top: 220px;
+    margin-right: 110px;
 }
 
 .descrOne {
-  width: 509px;
-  padding-bottom: 15px;
-  margin: 0;
+    width: 509px;
+    padding-bottom: 15px;
+    margin: 0;
 
-  font-weight: 500;
-  font-size: 41px;
-  line-height: 1.2;
+    font-weight: 500;
+    font-size: 41px;
+    line-height: 1.2;
 }
 .descrTwo {
-  padding: 0;
-  margin: 0;
-  font-weight: 400;
-  font-size: 26px;
-  line-height: 1.2;
+    padding: 0;
+    margin: 0;
+    font-weight: 400;
+    font-size: 26px;
+    line-height: 1.2;
 }
 
 .form {
-  width: 500px;
-  height: 590px;
-  padding: 50px;
+    width: 500px;
+    height: 590px;
+    padding: 50px;
 }
