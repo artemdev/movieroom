@@ -38,6 +38,7 @@ const logIn = createAsyncThunk(
             return data;
         } catch (error) {
             //TODO 400
+
             if (error.response.status === 400) {
                 toast.error('There is no user with this email and password!');
                 console.error('There is no user with this email and password!');
@@ -50,9 +51,9 @@ const logIn = createAsyncThunk(
 
 const logOut = createAsyncThunk(
     'auth/logout',
-    async (_, { rejectWithValue }) => {
+    async (options, { rejectWithValue }) => {
         try {
-            await API.logOut();
+            await API.logOut(options);
 
             API.token.unset();
         } catch (error) {

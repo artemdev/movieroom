@@ -6,7 +6,7 @@ const collectionSchema = new Schema(
     {
         name: {
             type: String,
-            required: [true, 'Please set name for the contact'],
+            // required: [true, 'Please set name for the contact'],
         },
         email: {
             type: String,
