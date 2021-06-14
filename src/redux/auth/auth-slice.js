@@ -30,11 +30,11 @@ const authSlice = createSlice({
         [authOperations.logIn.fulfilled](state, { payload }) {
             // state.user = payload.data.user;
             state.user = {
-                name: payload.data.name,
-                email: payload.data.email,
+                name: payload.name,
+                email: payload.email,
             };
-            state.token = payload.data.token;
-            state.verify = payload.data.verify;
+            state.token = payload.token;
+            state.verify = payload.verify;
             state.isLoggedIn = true;
         },
         [authOperations.logIn.rejected](state, action) {
@@ -42,6 +42,7 @@ const authSlice = createSlice({
         },
 
         [authOperations.logOut.fulfilled](state) {
+            console.log('state>>>>', state);
             state.user = { name: null, email: null };
             state.token = null;
             state.isLoggedIn = false;
