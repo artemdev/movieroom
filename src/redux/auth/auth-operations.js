@@ -1,6 +1,7 @@
 import * as API from '../../services/api-auth';
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import { toast } from 'react-toastify';
+import axios from 'axios';
 
 const register = createAsyncThunk(
     'auth/register',
@@ -39,14 +40,14 @@ const logIn = createAsyncThunk(
     'auth/login',
     async (credentials, { rejectWithValue }) => {
         try {
-            const { data } = await API.logIn(credentials);
+            const {
+                data: { data },
+            } = await axios.post('/auth/login', credentials);
 
             API.token.set(data.token);
 
             return data;
         } catch (error) {
-            //TODO 400
-
             if (error.response.status === 400) {
                 toast.error('There is no user with this email and password!');
                 console.error('There is no user with this email and password!');
@@ -61,7 +62,7 @@ const logOut = createAsyncThunk(
     'auth/logout',
     async (options, { rejectWithValue }) => {
         try {
-            await API.logOut(options);
+            await axios.post('/auth/logout', options);
 
             API.token.unset();
         } catch (error) {
