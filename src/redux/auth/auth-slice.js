@@ -7,24 +7,34 @@ const initialState = {
     isLoggedIn: false,
     isFetchingCurrentUser: false,
     error: null,
+    verify: false,
 };
 
 const authSlice = createSlice({
     name: 'auth',
     initialState,
     extraReducers: {
-        [authOperations.register.fulfilled](state, action) {
-            state.user = action.payload.user;
-            state.token = action.payload.token;
+        [authOperations.register.fulfilled](state, { payload }) {
+            state.user = {
+                name: payload.data.name,
+                email: payload.data.email,
+            };
+            state.avatar = payload.data.avatar;
+            // state.token = action.payload.token;
 
             state.isLoggedIn = true;
         },
-        [authOperations.register.rejected](state, action) {
-            state.error = action.payload;
+        [authOperations.register.rejected](state, { payload }) {
+            state.error = payload;
         },
-        [authOperations.logIn.fulfilled](state, action) {
-            state.user = action.payload.data.user;
-            state.token = action.payload.data.token;
+        [authOperations.logIn.fulfilled](state, { payload }) {
+            // state.user = payload.data.user;
+            state.user = {
+                name: payload.data.name,
+                email: payload.data.email,
+            };
+            state.token = payload.data.token;
+            state.verify = payload.data.verify;
             state.isLoggedIn = true;
         },
         [authOperations.logIn.rejected](state, action) {
@@ -35,6 +45,7 @@ const authSlice = createSlice({
             state.user = { name: null, email: null };
             state.token = null;
             state.isLoggedIn = false;
+            state.verify = false;
         },
         [authOperations.logOut.rejected](state, action) {
             state.error = action.payload;

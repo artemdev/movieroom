@@ -52,7 +52,7 @@ function App() {
                             path="/login"
                             exact
                             restricted
-                            redirectTo="/collections"
+                            // redirectTo="/collections"
                         >
                             <WelcomeView logo={<Logo />}>
                                 <AppBar />
@@ -63,7 +63,7 @@ function App() {
                             path="/register"
                             exact
                             restricted
-                            redirectTo="/collections"
+                            // redirectTo="/collections"
                         >
                             <WelcomeView logo={<Logo />}>
                                 <AppBar />
@@ -90,7 +90,7 @@ function App() {
                 </Switch>
                 <ToastContainer
                     position="top-right"
-                    autoClose={5000}
+                    autoClose={7000}
                     hideProgressBar={false}
                     newestOnTop={false}
                     closeOnClick

@@ -8,6 +8,13 @@ const register = createAsyncThunk(
         try {
             const { data } = await API.register(credentials);
             API.token.set(data.token);
+            toast.info(
+                'Вы зарегистрированы! Для активации аккаунта перейдите по ссылке в письме, на указаной Вами почте.',
+            );
+            toast.info(
+                'Are you registered! To activate your account, follow the link in the letter on the mail you specified.',
+            );
+
             return data;
         } catch (error) {
             if (error.response.status === 409) {
@@ -35,6 +42,7 @@ const logIn = createAsyncThunk(
             const { data } = await API.logIn(credentials);
 
             API.token.set(data.token);
+
             return data;
         } catch (error) {
             //TODO 400
