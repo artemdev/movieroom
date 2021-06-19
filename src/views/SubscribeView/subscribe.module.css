@@ -7,8 +7,6 @@
 }
 
 .intro h2 {
-
-  /* width: 100%; */
   text-align: center;
   width: 50%;
 }
@@ -144,16 +142,48 @@
 }
 
 .subscribeBtn {
+  display: inline-block;
+  position: relative;
   color: #ffffff;
   width: 400px;
   height: 60px;
   position: relative;
-  border-radius: 30px;
-  background-color: #fb37ff;
+
+  /* border-radius: 30px; */
+  background-color: transparent;
   cursor: pointer;
   text-decoration: none;
+
+  /* text-shadow: 
+  0 0 0.05em white,
+  0 0 0.05em currentColor;  */
+  box-shadow: inset 0 0 1em #ff3780;
+  font-size: 2rem;
+  border: none;
+  padding: 0.25em 1em;
+  border-radius: 30px;
+  border: currentColor 0.0525em solid;
+
+  /* z-index: 1; */
 }
 
-.subscribeBtn:hover {
+.subscribeBtn::before {
+  box-shadow: 0 0 0 1.9px rgba(251, 55, 255, 1), 0 0 0 3.83333px #fb37ff;
+
+  /* 0 0 0 6.22917px rgba(255, 255, 255, 0.6); */
+
+  border: inherit;
+  border-radius: 30px;
+
+  /* z-index: -1; */
+  border-color: transparent;
+  background: inherit;
+  background-clip: border-box;
+  position: absolute;
+  content: '';
   cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
 }
