@@ -53,8 +53,8 @@
 .btn::before {
   z-index: 1;
   box-shadow: 0 0 0 1.92px rgba(255, 255, 255, 0.8), inset 0 0 0 2px #fb37ff,
-    inset 0 0 0 4px rgba(251, 55, 255, 0.2), 0 0 20px #ff26c2,
-    inset 0 0 40px #f32e7c, inset 0 0 400px rgba(255, 55, 128, 0.2);
+    0 0 20px rgba(251, 55, 255, 1), 0 0 20px #ff26c2, 0 0 10px #f32e7c,
+    inset 0 0 30px #ff26c2, inset 0 0 70px rgba(255, 55, 128, 0.3);
   background: #690465;
   border-radius: 30px;
   width: 400px;
