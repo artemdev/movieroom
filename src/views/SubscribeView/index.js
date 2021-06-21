@@ -1,4 +1,5 @@
 import styles from './subscribe.module.css';
+import button from '../../components/Button/Button.module.css';
 import axios from 'axios';
 export default function SubscribeView() {
     const handleSubmit = e => {
@@ -39,7 +40,7 @@ export default function SubscribeView() {
                         placeholder="Ваш имейл"
                     />
 
-                    <button type="submit" className={styles.subscribeBtn}>
+                    <button type="submit" className={button.btn}>
                         Подписаться
                     </button>
                 </form>
