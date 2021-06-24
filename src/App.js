@@ -9,10 +9,10 @@ import WelcomeView from './components/WelcomeView/WelcomeView';
 import Logo from './components/Logo/Logo';
 import './App.css';
 import { authOperations } from './redux/auth';
-import NavBarView from './components/NavBar';
+import NavBarView from './components/navBar';
 import RoomOpen from './components/Rooms/Open';
 import RoomClosed from './components/Rooms/Closed';
-import Collections from './components/Collections';
+import Collections from './components/collections';
 import VoteRoom from './components/voteRoom/voteRoom';
 
 const RegisterView = lazy(() => import('./views/RegisterView'));
