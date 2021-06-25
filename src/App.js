@@ -45,7 +45,6 @@ function App() {
                             restricted
                             redirectTo="/subscribe"
                         >
-                            <NavBarView />
                             <SubscribeView />
                         </PublicRoute>
                         <PublicRoute

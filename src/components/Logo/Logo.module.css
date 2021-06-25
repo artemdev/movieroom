@@ -10,8 +10,16 @@
 
   text-shadow: 2px 2px 0 #ffffff, 2px -2px 0 #ffffff, -2px 2px 0 #ffffff,
     -2px -2px 0 #ffffff, 2px 0px 0 #ffffff, 0px 2px 0 #ffffff,
-    -2px 0px 0 #ffffff, 0px -2px 0 #ffffff, 0px 0px 14px rgba(255, 255, 255, 0),
-    0px 0px 20px #ff3778, 0px 0px 30px #ff3778, 0px 0px 50px #ff3778,
-    0px 0px 20px #fb37ff, 0px 0px 30px #fb37ff, 0px 0px 40px #fb37ff,
-    0px 0px 20px #ff26c2, 0px 0px 14px #990099;
+    -2px 0px 0 #ffffff, 0px -2px 0 #ffffff,
+    0px 0px 14px rgba(255, 255, 255, 0), 0px 0px 20px #ff3778,
+    0px 0px 30px #ff3778, 0px 0px 50px #ff3778, 0px 0px 20px #fb37ff,
+    0px 0px 30px #fb37ff, 0px 0px 40px #fb37ff, 0px 0px 20px #ff26c2,
+    0px 0px 14px #990099;
+}
+
+@media (max-width: 767px) {
+  .logo {
+    max-width: 100%;
+    font-size: 5em;
+  }
 }

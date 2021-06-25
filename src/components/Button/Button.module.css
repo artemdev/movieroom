@@ -75,3 +75,13 @@
 .btn:focus {
   background: rgba(255, 55, 128, 0.2);
 }
+
+@media (max-width: 767px) {
+  .btn {
+    width: 90%;
+  }
+
+  .btn:before {
+    width: 100%;
+  }
+}
