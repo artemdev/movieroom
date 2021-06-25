@@ -140,3 +140,17 @@
     align-items: center;
   }
 }
+
+.navBar {
+  display: flex;
+  width: 100%;
+  max-width: 100%;
+  padding-left: 80px;
+  margin-bottom: 50px;
+}
+
+@media (max-width: 767px) {
+  .navBar {
+    margin-bottom: 10px;
+  }
+}
