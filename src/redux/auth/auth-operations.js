@@ -8,6 +8,7 @@ const register = createAsyncThunk(
     async (credentials, { rejectWithValue }) => {
         try {
             const { data } = await API.register(credentials);
+            console.log(data);
             API.token.set(data.token);
             toast.info(
                 'Вы зарегистрированы! Для активации аккаунта перейдите по ссылке в письме, на указаной Вами почте.',
@@ -94,7 +95,7 @@ const fetchCurrentUser = createAsyncThunk(
 
         API.token.set(persistedToken);
         try {
-            const { data } = await API.fetchCurrentUser();
+            const { data } = await API.fetchCurrentUser(persistedToken);
 
             return data;
         } catch (error) {

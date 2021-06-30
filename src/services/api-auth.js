@@ -1,8 +1,8 @@
 import axios from 'axios';
 import { API_BACKEND } from '../helpers/routes';
 
-axios.defaults.baseURL = API_BACKEND;
-// axios.defaults.baseURL = 'http://localhost:3000/api';
+// axios.defaults.baseURL = API_BACKEND;
+axios.defaults.baseURL = 'http://localhost:4000/api';
 
 export const token = {
     set(token) {
@@ -23,4 +23,4 @@ export const logIn = credentials => {
 export const logOut = options => axios.post('/auth/logout', options);
 
 // export const fetchCurrentUser = () => axios.get('/auth/refresh');
-export const fetchCurrentUser = () => axios.get('/users/current');
+export const fetchCurrentUser = token => axios.get(`/users/current/${token}`);
