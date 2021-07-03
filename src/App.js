@@ -62,7 +62,7 @@ function App() {
                             path="/register"
                             exact
                             restricted
-                            // redirectTo="/collections"
+                            redirectTo="/login"
                         >
                             <WelcomeView logo={<Logo />}>
                                 <AppBar />
