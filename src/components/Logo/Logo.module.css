@@ -19,7 +19,8 @@
 
 @media (max-width: 767px) {
   .logo {
-    max-width: 100%;
+    max-width: 90%;
     font-size: 5em;
+    padding-left: 15px;
   }
 }
