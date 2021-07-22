@@ -5,7 +5,6 @@ import Button from '../../components/Button';
 import s from './RegisterView.module.css';
 import formSchema from '../../helpers/formSchema';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
-// import { Formik } from 'formik';
 
 export default function RegisterView() {
     const signUp = 'Создать комнату';
@@ -90,14 +89,14 @@ export default function RegisterView() {
                             <ErrorMessage name="password" />
                         </div>
                     </label>
+                    <label className={s.checkbox}>
+                        <input type="checkbox" name="saveMe" />
+                        <div className={s.checkboxTitle}>Запомнить меня</div>
+                    </label>
                     <Button title={signUp}></Button>
                 </Form>
             </Formik>
 
-            <label className={s.checkbox}>
-                <input type="checkbox" name="saveMe" />
-                <div className={s.checkboxTitle}>Запомнить меня</div>
-            </label>
             <p className={s.title}>
                 Регистрируя новый профиль, вы принимаете условия{' '}
                 <a href="!#">пользовательского соглашения</a>
