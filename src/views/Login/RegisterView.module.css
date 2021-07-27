@@ -53,7 +53,7 @@
 .visiblePass {
   cursor: pointer;
   position: absolute;
-  right: 21px;
+  right: 60px;
   width: 24px;
   height: 24px;
   background-repeat: no-repeat;
@@ -84,14 +84,16 @@
 @media (max-width: 767px) {
   .input {
     margin: 0;
+    position: relative;
+    width: 90%;
   }
 
   .form,
   .label {
     width: 100%;
     display: flex;
-    align-items: center;
-    justify-content: center;
+    align-items: flex-start;
+    justify-content: flex-start;
   }
 
   .form {
@@ -99,8 +101,16 @@
     padding: 15px;
   }
 
-  .input {
-    width: 90%;
+  .label:nth-child(3n) {
+    margin-bottom: 5px;
+  }
+
+  .checkbox {
+    margin-left: 10px;
+  }
+
+  .label:nth-child(n) {
+    margin-bottom: 10px;
   }
 
   .title {

@@ -12,10 +12,12 @@ export default function PublicRoute({
     const isVerify = useSelector(authSelectors.getVerify);
     // console.log('VERIFY>>>', isVerify);
     // const shouldRedirect = isLoggedIn && restricted;
-    const shouldRedirect = isLoggedIn && isVerify && restricted;
+
+    const shouldRedirect = isLoggedIn && restricted;
+    const url = isVerify ? '/collections' : '/verify';
     return (
         <Route {...routeProps}>
-            {shouldRedirect ? <Redirect to="/collections" /> : children}
+            {shouldRedirect ? <Redirect to={url} /> : children}
         </Route>
     );
 }

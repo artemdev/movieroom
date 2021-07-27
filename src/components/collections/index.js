@@ -61,7 +61,7 @@ export default function Collections(props) {
                 onClose={() => {
                     setShow(false);
                 }}
-                movies={currentCollection.parts}
+                movies={currentCollection && currentCollection.parts}
             />
         </div>
     );
