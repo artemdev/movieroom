@@ -19,6 +19,7 @@ import 'react-toastify/dist/ReactToastify.css';
 
 const RegisterView = lazy(() => import('./views/Login/RegisterView'));
 const LoginView = lazy(() => import('./views/Login/LoginView'));
+const VerifyView = lazy(() => import('./views/Verify/VerifyView'));
 const RoomOpen = lazy(() => import('./components/Rooms/Open'));
 const RoomClosed = lazy(() => import('./components/Rooms/Closed'));
 function App() {
@@ -69,6 +70,9 @@ function App() {
                                 <RegisterView />
                             </WelcomeView>
                         </PublicRoute>
+                        <PrivateRoute path="/verify" exact redirectTo="/">
+                            <VerifyView />
+                        </PrivateRoute>
                         <PrivateRoute path="/collections" redirectTo="/login">
                             <NavBarView />
                             <Collections />
