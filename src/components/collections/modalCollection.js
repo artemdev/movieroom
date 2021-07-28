@@ -102,7 +102,7 @@ export default function Collection({ movie }) {
         <>
             <div className={styles.placeholder}>
                 <div
-                    className="myimage"
+                    className={styles.modalCollectionImageWrap}
                     style={{
                         backgroundImage: 'url(placeholder.jpg)',
                     }}

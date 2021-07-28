@@ -12,7 +12,6 @@ export default function Collections(props) {
 
     const [currentCollection, setCurrentCollection] = useState([]);
 
-    // redirect when room is opened
     const roomOpened = useSelector(roomsSelectors.getIsOpen);
 
     if (roomOpened) {
