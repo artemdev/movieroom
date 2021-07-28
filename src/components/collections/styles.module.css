@@ -208,3 +208,45 @@
   background-image: url('spinner.gif');
   margin-right: 10px;
 }
+
+@media (max-width: 767px) {
+
+  /* .modalCollectionImageWrap {
+        width: 100%;
+    }
+    .modalCollectionImage {
+        width: 100%;
+    }
+    .modalCollectionBody {
+        width: 100%;
+    } */
+  .placeholder {
+    width: 30%;
+  }
+
+  .modalCollectionText {
+    width: 70%;
+    margin-left: 30px;
+  }
+
+  .modalCollectionBody {
+    width: 100%;
+    margin-bottom: 20px;
+    height: auto;
+  }
+
+  .modalFooter {
+    display: flex;
+    justify-content: space-between;
+    max-width: 100%;
+    width: 100%;
+  }
+
+  .modalNext,
+  .modalClose {
+
+    /* width: 130px; */
+    width: 45%;
+    margin-right: 0px;
+  }
+}
