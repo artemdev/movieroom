@@ -22,6 +22,7 @@ const LoginView = lazy(() => import('./views/Login/LoginView'));
 const VerifyView = lazy(() => import('./views/Verify/VerifyView'));
 const RoomOpen = lazy(() => import('./components/Rooms/Open'));
 const RoomClosed = lazy(() => import('./components/Rooms/Closed'));
+
 function App() {
     const dispatch = useDispatch();
 
@@ -52,7 +53,7 @@ function App() {
                             path="/login"
                             exact
                             restricted
-                            // redirectTo="/collections"
+                            redirectTo="/collections"
                         >
                             <WelcomeView logo={<Logo />}>
                                 <AppBar />
