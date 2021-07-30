@@ -49,6 +49,9 @@ export default function SubscribeView() {
                         <button type="submit" className={button.btn}>
                             Подписаться
                         </button>
+                        <div>
+                            <a href="/login"> Login</a>
+                        </div>
                     </form>
                     <div id="thankYou" className={styles.thankYouBlock}>
                         Thank you ! We received your email and will notify once
