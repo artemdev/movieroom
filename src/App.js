@@ -11,7 +11,7 @@ import SubscribeView from './views/SubscribeView/';
 import Logo from './components/Logo/Logo';
 import './App.css';
 import { authOperations } from './redux/auth';
-import NavBarView from './components/NavBar';
+import NavBarView from './components/navBar';
 import Collections from './components/collections';
 import VoteRoom from './components/voteRoom/voteRoom';
 import { ToastContainer } from 'react-toastify';
