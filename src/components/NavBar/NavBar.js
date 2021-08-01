@@ -7,6 +7,8 @@ export default function NavBar() {
     const signIn = true;
     const signOut = 'Выйти';
     const dispatch = useDispatch();
+    const token =
+        'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjoxNjI3NjQ4MDI0LCJpYXQiOjE2Mjc2NDgwNTQsImV4cCI6MTY1MzU2ODA1NH0.-Eg2qWMCeo5Al5dUTvS7Gu4wrhxoDiybpQan4BwrB9U';
     return (
         <>
             <header className={styles.navBar}>
@@ -18,7 +20,9 @@ export default function NavBar() {
                         <button
                             className={styles.btn}
                             type="button"
-                            onClick={() => dispatch(authOperations.logOut())}
+                            onClick={() =>
+                                dispatch(authOperations.logOut(token))
+                            }
                         >
                             {signOut}
                         </button>
