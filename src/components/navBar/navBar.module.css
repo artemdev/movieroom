@@ -1,64 +1,72 @@
 .navBar {
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    color: white;
-    padding: 20px;
-    box-sizing: border-box;
-    height: 170px;
-    display: flex;
-    align-items: center;
-    font-family: Rubik;
-    font-size: 26px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 31px;
-    letter-spacing: 0em;
-    text-align: left;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  color: white;
+  padding: 20px;
+  box-sizing: border-box;
+  height: 170px;
+  display: flex;
+  align-items: center;
+  font-family: Rubik;
+  font-size: 26px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 31px;
+  letter-spacing: 0em;
+  text-align: left;
 }
+
 .navBar a {
-    color: white;
-    text-decoration: none;
+  color: white;
+  text-decoration: none;
 }
 
 .headerMenu {
-    width: 350px;
-    display: flex;
+  width: 350px;
+  display: flex;
 }
 
 .headerMenu a {
-    margin-left: 60px;
+  margin-left: 60px;
 }
+
 .headerLogo {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
+
 .headerLogo img {
-    width: 495px;
-    height: auto;
-    /* margin-left: -80px; */
+  width: 495px;
+  height: auto;
+
+  /* margin-left: -80px; */
 }
 
 @media (max-width: 767px) {
-    .navBar {
-        font-size: 12px;
-        padding: 0px;
-    }
-    .headerLogo img {
-        margin-left: 0;
-        width: 100%;
-    }
-    .headerMenu {
-        display: flex;
-        align-items: flex-end;
-        justify-content: flex-end;
-        margin-right: 10px;
-    }
-    .headerMenu a {
-        margin-left: 5px;
-    }
+  .navBar {
+    font-size: 12px;
+    padding: 0px;
+  }
+
+  .headerLogo img {
+    margin-left: 0;
+    width: 100%;
+  }
+
+  .headerMenu {
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+    margin-right: 10px;
+  }
+
+  .headerMenu a {
+    margin-left: 5px;
+  }
 }
+
 /* .label {
     position: absolute;
     width: 1px;
@@ -71,17 +79,17 @@
     border: 0;
 } */
 .btn {
-    background-color: transparent;
-    outline: none;
-    border-style: none;
+  background-color: transparent;
+  outline: none;
+  border-style: none;
 }
 
 .btn {
-    color: #ffffff;
-    transition: color 0.4s;
+  color: #ffffff;
+  transition: color 0.4s;
 }
 
 .btn:hover,
 .btn:focus {
-    color: #c33764;
+  color: #c33764;
 }
