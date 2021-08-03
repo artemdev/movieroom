@@ -45,7 +45,7 @@ function App() {
                             path="/"
                             exact
                             restricted
-                            redirectTo="/subscribe"
+                            redirectTo="/login"
                         >
                             <SubscribeView />
                         </PublicRoute>
