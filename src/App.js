@@ -54,12 +54,7 @@ function App() {
                             exact
                             restricted
                             redirectTo="/collections"
-                        >
-                            <WelcomeView logo={<Logo />}>
-                                <AppBar />
-                                {/* <LoginView /> */}
-                            </WelcomeView>
-                        </PublicRoute>
+                        ></PublicRoute>
                         <PublicRoute
                             path="/register"
                             exact
