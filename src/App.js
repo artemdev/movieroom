@@ -57,7 +57,7 @@ function App() {
                         >
                             <WelcomeView logo={<Logo />}>
                                 <AppBar />
-                                <LoginView />
+                                {/* <LoginView /> */}
                             </WelcomeView>
                         </PublicRoute>
                         <PublicRoute
