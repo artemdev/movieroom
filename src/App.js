@@ -45,7 +45,7 @@ function App() {
                             path="/"
                             exact
                             restricted
-                            redirectTo="/login"
+                            redirectTo="/subscribe"
                         >
                             <SubscribeView />
                         </PublicRoute>
@@ -54,7 +54,12 @@ function App() {
                             exact
                             restricted
                             redirectTo="/collections"
-                        ></PublicRoute>
+                        >
+                            <WelcomeView logo={<Logo />}>
+                                <AppBar />
+                                <LoginView />
+                            </WelcomeView>
+                        </PublicRoute>
                         <PublicRoute
                             path="/register"
                             exact
