@@ -1,215 +1,230 @@
 .collectionImage {
-    width: 285px;
-    height: 210px;
-    background-size: cover;
-    opacity: 0.4;
+  width: 285px;
+  height: 210px;
+  background-size: cover;
+  opacity: 0.4;
 }
 
 .collections {
-    height: 100%;
-    width: 90%;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
+  height: 100%;
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 }
 
 .collectionText {
-    position: absolute;
-    top: 0;
-    height: 100%;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    line-height: 28px;
-    font-weight: 500;
-    font-size: 25px;
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 28px;
+  font-weight: 500;
+  font-size: 25px;
 }
 
 .modalCollectionText span {
-    display: block;
-    font-family: Rubik;
-    font-size: 16px;
-    font-style: normal;
-    font-weight: 500;
-    line-height: 22px;
-    letter-spacing: 0em;
-    text-align: left;
+  display: block;
+  font-family: Rubik;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 22px;
+  letter-spacing: 0em;
+  text-align: left;
 }
 
 .modalCollectionText h4 {
-    font-family: Rubik;
-    font-size: 1.3em;
-    line-height: 1em;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 31px;
-    letter-spacing: 0em;
-    text-align: left;
+  font-family: Rubik;
+  font-size: 1.3em;
+  line-height: 1em;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 31px;
+  letter-spacing: 0em;
+  text-align: left;
 }
 
 .collectionTitle {
-    text-align: center;
-    margin-bottom: 40px;
-    margin-top: 20px;
-    margin: 20px auto 40px auto;
-    color: white;
-    margin-left: auto;
-    margin-right: auto;
+  text-align: center;
+  margin-bottom: 40px;
+  margin-top: 20px;
+  margin: 20px auto 40px auto;
+  color: white;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .collectionItem {
-    position: relative;
-    width: 285px;
-    height: 210px;
-    margin-bottom: 20px;
+  position: relative;
+  width: 285px;
+  height: 210px;
+  margin-bottom: 20px;
 }
 
 .collectionItem:hover {
-    cursor: pointer;
+  cursor: pointer;
 }
 
 .collectionsList {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .collectionItem {
-    font-family: Rubik;
-    font-size: 25px;
-    font-style: normal;
-    font-weight: 500;
-    line-height: 34px;
-    letter-spacing: 0em;
-    text-align: center;
-    color: white;
+  font-family: Rubik;
+  font-size: 25px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 34px;
+  letter-spacing: 0em;
+  text-align: center;
+  color: white;
 }
 
 .collectionPreviewItem {
-    width: 440px;
-    height: 200px;
-    display: flex;
+  width: 440px;
+  height: 200px;
+  display: flex;
 }
 
 .collectionPreviewImage {
-    width: 150px;
-    margin: 0 50px 20px 0;
+  width: 150px;
+  margin: 0 50px 20px 0;
 }
 
 .collectionPreviewText {
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
 }
 
 .modal {
-    position: fixed;
-    left: 0;
-    top: 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 100%;
-    overflow-y: auto;
-    width: 100%;
-    color: white;
-    flex-direction: row;
-    background: rgb(0, 0, 0, 0.8);
+  position: fixed;
+  left: 0;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  overflow-y: auto;
+  width: 100%;
+  color: white;
+  flex-direction: row;
+  background: rgb(0, 0, 0, 0.8);
 }
 
 .modalContent {
-    position: absolute;
-    top: 0;
-    padding: 20px 0 20px 0;
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: auto;
-    background: linear-gradient(90deg, #c33764 0%, #1d2671 100%);
+  position: absolute;
+  top: 0;
+  padding: 20px 0 20px 0;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: auto;
+  background: linear-gradient(90deg, #c33764 0%, #1d2671 100%);
 }
 
 .modalCollectionImage {
-    width: 125px;
-    height: 185px;
-    height: auto;
-    margin-right: 10px;
+  width: 125px;
+  height: 185px;
+  height: auto;
+  margin-right: 10px;
 }
 
 .modalCollectionBody {
-    /* position: fixed; */
-    display: flex;
-    align-items: flex-start;
-    flex-direction: row;
-    justify-content: flex-start;
-    margin: 0 2% 10px 10px;
-    width: 46%;
-    height: 193px;
+
+  /* position: fixed; */
+  display: flex;
+  align-items: flex-start;
+  flex-direction: row;
+  justify-content: flex-start;
+  margin: 0 2% 10px 10px;
+  width: 46%;
+  height: 193px;
 }
 
 .modalCollectionBody:hover {
-    cursor: pointer;
+  cursor: pointer;
 }
 
 .modalHeader,
 .modalFooter {
-    padding: 10px;
-    margin: 0 auto;
+  padding: 10px;
+  margin: 0 auto;
 }
 
 .modalTitle {
-    margin: 0;
+  margin: 0;
 }
 
 .modalBody {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: flex-start;
-    max-width: 1024px;
-    width: 100%;
-    font-size: 16px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  max-width: 1024px;
+  width: 100%;
+  font-size: 16px;
 }
 
 .modalCollectionRating {
-    color: #ffc2f5;
+  color: #ffc2f5;
 }
 
 .modalNext,
 .modalClose {
-    width: 180px;
-    height: 50px;
-    border-radius: 50px;
+  width: 180px;
+  height: 50px;
+  border-radius: 50px;
 
-    margin-right: 20px;
-    cursor: pointer;
+  margin-right: 20px;
+  cursor: pointer;
 }
 
 .modalClose {
-    background-color: transparent;
-    border: 1px solid white;
-    color: white;
+  background-color: transparent;
+  border: 1px solid white;
+  color: white;
 }
 
 .modalNext {
-    background-color: white;
-    color: #f50d5e;
-    border: none;
+  background-color: white;
+  color: #f50d5e;
+  border: none;
 }
 
 .placeholder {
-    width: 125px;
-    height: 185px;
-    background-repeat: no-repeat;
-    background-size: contain;
-    background-image: url('spinner.gif');
-    margin-right: 10px;
+  width: 125px;
+  height: 185px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-image: url('spinner.gif');
+  margin-right: 10px;
 }
 
 @media (max-width: 767px) {
-    /* .modalCollectionImageWrap {
+  h2.collectionTitle {
+    width: 90%;
+  }
+
+  .collections {
+    width: 100%;
+  }
+
+  .collectionsList {
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+  }
+
+  /* .modalCollectionImageWrap {
         width: 100%;
     }
     .modalCollectionImage {
@@ -218,32 +233,33 @@
     .modalCollectionBody {
         width: 100%;
     } */
-    .placeholder {
-        width: 30%;
-    }
+  .placeholder {
+    width: 30%;
+  }
 
-    .modalCollectionText {
-        width: 70%;
-        margin-left: 30px;
-    }
+  .modalCollectionText {
+    width: 70%;
+    margin-left: 30px;
+  }
 
-    .modalCollectionBody {
-        width: 100%;
-        margin-bottom: 20px;
-        height: auto;
-    }
+  .modalCollectionBody {
+    width: 100%;
+    margin-bottom: 20px;
+    height: auto;
+  }
 
-    .modalFooter {
-        display: flex;
-        justify-content: space-between;
-        max-width: 100%;
-        width: 100%;
-    }
+  .modalFooter {
+    display: flex;
+    justify-content: space-between;
+    max-width: 100%;
+    width: 100%;
+  }
 
-    .modalNext,
-    .modalClose {
-        /* width: 130px; */
-        width: 45%;
-        margin-right: 0px;
-    }
+  .modalNext,
+  .modalClose {
+
+    /* width: 130px; */
+    width: 45%;
+    margin-right: 0px;
+  }
 }
