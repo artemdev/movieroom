@@ -43,7 +43,7 @@ export default function LoginView() {
                             name="email"
                             className={s.input}
                             type="email"
-                            placeholder={EmailPlaceholder}
+                            placeholder="Введите Ваш имейл"
                         />
                         <div className={s.error}>
                             <ErrorMessage name="email" />
@@ -57,7 +57,7 @@ export default function LoginView() {
                             name="password"
                             className={s.input}
                             type={hidePassword ? 'password' : 'text'}
-                            placeholder={Password}
+                            placeholder="Введите пароль"
                         />
                         <svg
                             className={
@@ -70,7 +70,7 @@ export default function LoginView() {
                             <ErrorMessage name="password" />
                         </div>
                     </label>
-                    <Button title={LoginPlaceholder}></Button>
+                    <Button title="Войти в комнату"></Button>
                 </Form>
             </Formik>
         </>
