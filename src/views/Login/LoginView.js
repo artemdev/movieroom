@@ -7,8 +7,8 @@ import formSchema from '../../helpers/formSchema';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 
 export default function LoginView() {
-    const Login = 'Войти в комнату';
-    const Email = 'Введите Ваш имейл';
+    const LoginPlaceholder = 'Войти в комнату';
+    const EmailPlaceholder = 'Введите Ваш имейл';
     const Password = 'Введите пароль';
     const dispatch = useDispatch();
     const [email, setEmail] = useState('');
@@ -43,7 +43,7 @@ export default function LoginView() {
                             name="email"
                             className={s.input}
                             type="email"
-                            placeholder={Email}
+                            placeholder={EmailPlaceholder}
                         />
                         <div className={s.error}>
                             <ErrorMessage name="email" />
@@ -70,7 +70,7 @@ export default function LoginView() {
                             <ErrorMessage name="password" />
                         </div>
                     </label>
-                    <Button title={Login}></Button>
+                    <Button title={LoginPlaceholder}></Button>
                 </Form>
             </Formik>
         </>
