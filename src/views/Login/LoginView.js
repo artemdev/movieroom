@@ -44,6 +44,7 @@ export default function LoginView() {
                             className={s.input}
                             type="email"
                             placeholder={Email}
+                            autocomplete="email"
                         />
                         <div className={s.error}>
                             <ErrorMessage name="email" />

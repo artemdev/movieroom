@@ -1,127 +1,128 @@
 .form {
-    padding-top: 50px;
+  padding-top: 50px;
 }
 
 .label {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
 
 .label:not(:last-child) {
-    margin-bottom: 25px;
+  margin-bottom: 25px;
 }
 
 .input {
-    padding-left: 21px;
-    padding-right: 21px;
-    width: 400px;
-    height: 50px;
-    border-style: none;
-    border: 0.5px solid #ffffff;
-    border-radius: 30px;
-    background: transparent;
-    outline: none;
-    color: #ffffff;
-    font-size: 16px;
+  padding-left: 21px;
+  padding-right: 21px;
+  width: 400px;
+  height: 50px;
+  border-style: none;
+  border: 0.5px solid #ffffff;
+  border-radius: 30px;
+  background-color: transparent;
+  outline: none;
+  color: #ffffff;
+  font-size: 16px;
 }
 
 .pass {
-    position: relative;
+  position: relative;
 }
 
 .input::placeholder {
-    /* padding-left: 21px; */
-    color: #ffffff;
-    opacity: 50%;
-    font-size: 16px;
+
+  /* padding-left: 21px; */
+  color: #ffffff;
+  opacity: 50%;
+  font-size: 16px;
 }
 
 .checkbox {
-    margin-top: 20px;
-    margin-bottom: 40px;
-    display: flex;
-    gap: 10px;
+  margin-top: 20px;
+  margin-bottom: 40px;
+  display: flex;
+  gap: 10px;
 }
 
 .checkboxTitle {
-    font-size: 14px;
-    font-weight: 300;
+  font-size: 14px;
+  font-weight: 300;
 }
 
 .notVisiblePass,
 .visiblePass {
-    cursor: pointer;
-    position: absolute;
-    right: 60px;
-    width: 24px;
-    height: 24px;
-    background-repeat: no-repeat;
-    background-position: center;
+  cursor: pointer;
+  position: absolute;
+  right: 60px;
+  width: 24px;
+  height: 24px;
+  background-repeat: no-repeat;
+  background-position: center;
 
-    /* fill: rgba(255, 255, 255, 0.3); */
+  /* fill: rgba(255, 255, 255, 0.3); */
 
-    fill-opacity: 0.3;
+  fill-opacity: 0.3;
 }
 
 .notVisiblePass {
-    top: 14px;
-    background-image: url(../../images/notVisiblePass.svg);
+  top: 14px;
+  background-image: url(../../images/notVisiblePass.svg);
 }
 
 .visiblePass {
-    top: 13px;
-    background-image: url(../../images/visiblePass.svg);
+  top: 13px;
+  background-image: url(../../images/visiblePass.svg);
 }
 
 .error {
-    padding-left: 21px;
-    margin-top: 10px;
-    font-size: 16px;
-    color: red;
+  padding-left: 21px;
+  margin-top: 10px;
+  font-size: 16px;
+  color: red;
 }
 
 @media (max-width: 767px) {
-    .input {
-        margin: 0;
-        position: relative;
-        width: 90%;
-    }
+  .input {
+    margin: 0;
+    position: relative;
+    width: 90%;
+  }
 
-    .form,
-    .label {
-        width: 100%;
-        display: flex;
-        align-items: flex-start;
-        justify-content: flex-start;
-    }
+  .form,
+  .label {
+    width: 100%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+  }
 
-    .form {
-        border: none;
-        padding: 15px;
-    }
+  .form {
+    border: none;
+    padding: 15px;
+  }
 
-    .label:nth-child(3n) {
-        margin-bottom: 5px;
-    }
+  .label:nth-child(3n) {
+    margin-bottom: 5px;
+  }
 
-    .checkbox {
-        margin-left: 10px;
-    }
+  .checkbox {
+    margin-left: 10px;
+  }
 
-    .label:nth-child(n) {
-        margin-bottom: 10px;
-    }
+  .label:nth-child(n) {
+    margin-bottom: 10px;
+  }
 
-    .title {
-        font-size: 0.8em;
-        padding: 20px;
-        width: 100%;
-    }
+  .title {
+    font-size: 0.8em;
+    padding: 20px;
+    width: 100%;
+  }
 
-    .checkbox {
-        margin-top: 0px;
-        margin-bottom: 15px;
-        display: flex;
-        gap: 10px;
-    }
+  .checkbox {
+    margin-top: 0px;
+    margin-bottom: 15px;
+    display: flex;
+    gap: 10px;
+  }
 }
