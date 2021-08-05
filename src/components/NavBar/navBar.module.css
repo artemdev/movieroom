@@ -1,9 +1,10 @@
 .navBar {
-  width: 100%;
+  width: 1200px;
   display: flex;
   justify-content: space-between;
   color: white;
-  padding: 20px;
+
+  /* padding: 20px; */
   box-sizing: border-box;
   height: 170px;
   display: flex;
@@ -25,6 +26,11 @@
 .headerMenu {
   width: 350px;
   display: flex;
+  justify-content: flex-end;
+
+  align-items: center;
+
+  /* margin-right: 50px; */
 }
 
 .headerMenu a {
@@ -58,8 +64,8 @@
 
   .headerMenu {
     display: flex;
-    align-items: flex-end;
-    justify-content: flex-end;
+    align-items: center;
+    justify-content: center;
     margin-right: 10px;
   }
 
@@ -84,6 +90,10 @@
   outline: none;
   border-style: none;
   cursor: pointer;
+}
+
+.name {
+  margin-right: 50px;
 }
 
 .btn {

@@ -9,7 +9,7 @@ export default function NavBar() {
     const signOut = 'Выйти';
     const dispatch = useDispatch();
     const token = useSelector(authSelectors.getToken);
-
+    const userName = useSelector(authSelectors.getUsername);
     return (
         <>
             <header className={styles.navBar}>
@@ -18,15 +18,18 @@ export default function NavBar() {
                 </div>
                 <div className={styles.headerMenu}>
                     {signIn ? (
-                        <button
-                            className={styles.btn}
-                            type="button"
-                            onClick={() =>
-                                dispatch(authOperations.logOut(token))
-                            }
-                        >
-                            {signOut}
-                        </button>
+                        <>
+                            <p className={styles.name}>{userName}</p>
+                            <button
+                                className={styles.btn}
+                                type="button"
+                                onClick={() =>
+                                    dispatch(authOperations.logOut(token))
+                                }
+                            >
+                                {signOut}
+                            </button>
+                        </>
                     ) : (
                         <a href="/#">Создать комнату</a>
                     )}

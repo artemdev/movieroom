@@ -27,7 +27,7 @@ export default function AuthNav() {
                 style={styles.link}
                 activeStyle={styles.activeLink}
             >
-                Создать комнау
+                Создать комнату
             </NavLink>
             <NavLink
                 to="/login"

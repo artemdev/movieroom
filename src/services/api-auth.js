@@ -23,4 +23,4 @@ export const logIn = credentials => {
 export const logOut = options => axios.post('/auth/logout', options);
 
 // export const fetchCurrentUser = () => axios.get('/auth/refresh');
-export const fetchCurrentUser = token => axios.get(`/users/current/${token}`);
+export const fetchCurrentUser = _ => axios.get(`/users/current`);

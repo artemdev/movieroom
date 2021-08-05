@@ -2,7 +2,7 @@ import * as styles from './styles.module.css';
 import { useDispatch, useSelector } from 'react-redux';
 import { roomsOperations, roomsSelectors } from '../../redux/rooms';
 
-export default function RoomOpenResults(props) {
+export default function RoomOpenResults(_props) {
     const roomOpened = useSelector(roomsSelectors.getIsOpen);
     const dispatch = useDispatch();
     if (!roomOpened) {
