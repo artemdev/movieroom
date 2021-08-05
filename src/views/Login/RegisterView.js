@@ -78,6 +78,7 @@ export default function RegisterView() {
                             className={s.input}
                             type={hidePassword ? 'password' : 'text'}
                             placeholder={Password}
+                            autocomplete="current-password"
                         />
                         <div
                             className={
