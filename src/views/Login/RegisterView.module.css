@@ -18,9 +18,10 @@
   height: 50px;
   border-style: none;
   border: none;
-  border-width: 2px;
+  background-clip: padding-box;
+  border-width: 1px;
 
-  border: 2px solid #ffffff;
+  border: 1px solid #ffffff;
   border-radius: 30px;
   background-color: transparent;
   outline: none;
