@@ -55,8 +55,8 @@ export default function SubscribeView() {
                         </button>
                     </form>
                     <div id="thankYou" className={styles.thankYouBlock}>
-                        Спасибо! Мы отправим вам письмо как только сайт будет
-                        готов &#128578;
+                        Спасибо! Мы отправим вам письмо как только MovieRoom
+                        будет готов &#128578;
                     </div>
                 </div>
             </div>
