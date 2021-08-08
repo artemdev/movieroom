@@ -12,7 +12,7 @@ import Logo from './components/Logo/Logo';
 import './App.css';
 import { authOperations } from './redux/auth';
 import NavBarView from './components/NavBar';
-import Collections from './components/collections';
+import Collections from './components/Collections';
 import VoteRoom from './components/voteRoom/voteRoom';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
