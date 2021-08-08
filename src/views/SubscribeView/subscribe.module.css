@@ -35,8 +35,8 @@
   display: block;
   width: 400px;
   height: 50px;
-  border: 0.5px solid #ffffff;
   box-sizing: border-box;
+  background-clip: padding-box;
   border-radius: 30px;
   margin-bottom: 50px;
   padding-left: 20px;
