@@ -102,11 +102,13 @@
   width: 90%;
 }
 
-.intro ol {
+ol {
   margin-bottom: 25px;
   font-size: 1.3em;
-  list-style: inside;
-  margin-left: 70px;
+  list-style-type: decimal;
+
+  /* list-style: inside; */
+  margin-left: 15%;
 }
 
 .intro li {
@@ -135,7 +137,7 @@
   }
 
   .intro ol {
-    margin-left: 20px;
+    margin-left: 40px;
   }
 
   .intro h2,
