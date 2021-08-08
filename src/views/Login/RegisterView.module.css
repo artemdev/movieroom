@@ -17,6 +17,8 @@
   width: 400px;
   height: 50px;
   border-style: none;
+  border: none;
+  border-width: 1px;
   border: 1px solid #ffffff;
   border-radius: 30px;
   background-color: transparent;
