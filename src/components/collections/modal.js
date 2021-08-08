@@ -1,7 +1,7 @@
 import styles from './styles.module.css';
 import ModalCollection from './modalCollection';
 import { roomsOperations } from '../../redux/rooms';
-
+import React, { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 
 export default function Modal({ show, onClose, movies }) {
@@ -15,7 +15,7 @@ export default function Modal({ show, onClose, movies }) {
     };
 
     return (
-        <div className={styles.modal}>
+        <div id="modal" className={styles.modal}>
             <div className={styles.modalContent}>
                 <div className={styles.modalBody}>
                     {movies &&

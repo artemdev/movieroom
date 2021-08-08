@@ -24,22 +24,39 @@ export default function Collections(props) {
             setCurrentCollection(collection);
         }
     };
+
+    const closeModal = e => {
+        setShow(false);
+    };
     useEffect(() => {
         (async function () {
             const { data } = await fetchCollections();
-            console.log('collections are', data);
             setCurrentCollection(data[0]);
             setCollections(data);
         })();
-
-        const close = e => {
-            if (e.keyCode === 27) {
-                props.onClose();
-            }
-        };
-        window.addEventListener('keydown', close);
-        return () => window.removeEventListener('keydown', close);
     }, [props]);
+    useEffect(() => {
+        if (show) {
+            const showClick = e => {
+                console.log('click event works ...');
+                if (e.target.id === 'modal') {
+                    closeModal();
+                }
+            };
+            const close = e => {
+                console.log('keycode event works ...');
+                if (e.keyCode === 27) {
+                    closeModal();
+                }
+            };
+            window.addEventListener('keydown', close);
+            window.addEventListener('click', showClick);
+            return () => {
+                window.removeEventListener('keydown', close);
+                window.removeEventListener('click', showClick);
+            };
+        }
+    }, [closeModal, show]);
     return (
         <div className={styles.collections}>
             <h2 className={styles.collectionTitle}>
@@ -61,9 +78,7 @@ export default function Collections(props) {
             </ul>
             <Modal
                 show={show}
-                onClose={() => {
-                    setShow(false);
-                }}
+                onClose={closeModal}
                 movies={currentCollection && currentCollection.parts}
             />
         </div>
