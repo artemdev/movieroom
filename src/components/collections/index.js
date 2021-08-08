@@ -31,11 +31,15 @@ export default function Collections(props) {
             setCurrentCollection(data[0]);
             setCollections(data);
         })();
-    }, []);
 
-    // import { Route, Redirect } from 'react-router-dom';
-    // <Redirect to={redirectTo} />;
-
+        const close = e => {
+            if (e.keyCode === 27) {
+                props.onClose();
+            }
+        };
+        window.addEventListener('keydown', close);
+        return () => window.removeEventListener('keydown', close);
+    }, [props]);
     return (
         <div className={styles.collections}>
             <h2 className={styles.collectionTitle}>
