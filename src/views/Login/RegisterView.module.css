@@ -17,14 +17,13 @@
   width: 400px;
   height: 50px;
   border-style: none;
-  border: none;
   background-clip: padding-box;
-  border-width: 1px;
-
   border: 1px solid #ffffff;
   border-radius: 30px;
   background-color: transparent;
   outline: none;
+  border-top: 0px;
+  border-bottom: 0px;
   color: #ffffff;
   font-size: 16px;
 }
