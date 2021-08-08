@@ -29,13 +29,17 @@ export default function SubscribeView() {
             </header>
             <div className={styles.wrap}>
                 <section className={styles.intro}>
-                    <h2>Всё еще спорите, какой фильм смотреть?</h2>
-                    <h3>Хватит спорить!</h3>
-                    <p>
-                        Создайте MoovieRoom, выберите интересную коллекцию,
-                        пригласите друзей, проголосуйте вместе и наслаждайтесь
-                        просмотром.
-                    </p>
+                    <h2>Спорите, какой фильм смотреть с друзьями?</h2>
+                    <h3>Попробуйте MoovieRoom &#128521;</h3>
+                    <ol type="1">
+                        <li>Создайте MoovieRoom комнату</li>
+                        <li>Выберите интересную коллекцию фильмов</li>
+                        <li>Пригласите друзей</li>
+                        <li>
+                            Проголосуйте вместе и наслаждайтесь просмотром
+                            фильма, который понравился всем. &#128588;
+                        </li>
+                    </ol>
                 </section>
                 <div className={styles.formWrap}>
                     <form className={styles.form} onSubmit={handleSubmit}>
@@ -49,13 +53,10 @@ export default function SubscribeView() {
                         <button type="submit" className={button.btn}>
                             Подписаться
                         </button>
-                        <div>
-                            <a href="/login"> Login</a>
-                        </div>
                     </form>
                     <div id="thankYou" className={styles.thankYouBlock}>
-                        Thank you ! We received your email and will notify once
-                        the app is released
+                        Спасибо! Мы отправим вам письмо как только сайт будет
+                        готов &#128578;
                     </div>
                 </div>
             </div>
