@@ -10,6 +10,7 @@ export default function NavBar() {
     const dispatch = useDispatch();
     const token = useSelector(authSelectors.getToken);
     const userName = useSelector(authSelectors.getUsername);
+
     return (
         <>
             <header className={styles.navBar}>

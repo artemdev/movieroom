@@ -95,7 +95,6 @@ const fetchCurrentUser = createAsyncThunk(
         API.token.set(persistedToken);
         try {
             const { data } = await API.fetchCurrentUser(persistedToken);
-
             return data;
         } catch (error) {
             if (error.response.status === 401) {
