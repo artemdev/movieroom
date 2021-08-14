@@ -10,7 +10,7 @@ import {
     REGISTER,
 } from 'redux-persist';
 import storage from 'redux-persist/lib/storage';
-import logger from 'redux-logger';
+// import logger from 'redux-logger';
 import { authReducer } from './auth';
 import { roomsReducer } from './rooms';
 const middleware = [
@@ -19,7 +19,7 @@ const middleware = [
             ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
         },
     }),
-    logger,
+    // logger,
 ];
 
 const authPersistConfig = {
@@ -30,7 +30,7 @@ const authPersistConfig = {
 const roomsPersistConfig = {
     key: 'rooms',
     storage,
-    whitelist: ['isOpen'],
+    whitelist: ['isOpen', 'movies'],
 };
 
 export const store = configureStore({

@@ -2,6 +2,7 @@ import { createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
 import { token } from '../../services/api-auth';
 import { CREATE_ROOM_URL } from '../../helpers/routes';
+import * as API from '../../services/rooms-api';
 
 const create = createAsyncThunk(
     'rooms/create',
@@ -33,8 +34,25 @@ const exit = createAsyncThunk(
         return true;
     },
 );
+
+const getMoviesInRoom = createAsyncThunk(
+    'rooms/getMoviesInRoom',
+    async (roomId, { rejectWithValue, _getState }) => {
+        const options = {
+            roomId,
+        };
+        try {
+            const { data } = await axios.get(`/rooms`, options);
+            return data;
+        } catch (error) {
+            return rejectWithValue(error.message);
+        }
+    },
+);
+
 const operations = {
     create,
+    getMoviesInRoom,
     exit,
 };
 
