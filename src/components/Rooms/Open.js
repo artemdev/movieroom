@@ -5,7 +5,7 @@ import { roomsOperations, roomsSelectors } from '../../redux/rooms';
 
 export default function RoomOpenResults(_props) {
     const roomOpened = useSelector(roomsSelectors.getIsOpen);
-    const { movies } = useSelector(roomsSelectors.getMovies);
+    const movie = useSelector(roomsSelectors.getCurrentMovie);
     const dispatch = useDispatch();
     const MOVIE_DB_URL = 'https://image.tmdb.org/t/p/w500/';
     if (!roomOpened) {
@@ -16,28 +16,32 @@ export default function RoomOpenResults(_props) {
         dispatch(roomsOperations.exit());
     };
 
+    const handleDislike = () => {
+        //send request to API with Vote
+        dispatch(roomsOperations.voteDislike(movie.id, roomOpened));
+    };
+
+    const handleLike = () => {
+        dispatch(roomsOperations.voteLike(movie.id, roomOpened));
+    };
+
     useEffect(() => {
-        dispatch(roomsOperations.getMoviesInRoom('60abe6e59ac60b001c0c06ca'));
+        dispatch(roomsOperations.getMoviesInRoom(roomOpened));
     }, [dispatch, roomOpened]);
 
     return (
         <div>
-            <ul className={styles.gallery}>
-                {movies &&
-                    movies.map((movie, index) => (
-                        <li key={index}>
-                            <section>
-                                <h3>{movie.title}</h3>
-                                <img
-                                    src={MOVIE_DB_URL + movie.backdrop_path}
-                                    alt=""
-                                />
-                                <h3>{movie.overview}</h3>
-                                {movie.id}
-                            </section>
-                        </li>
-                    ))}
-            </ul>
+            {/* <ul className={styles.gallery}> */}
+            {movie && (
+                <section>
+                    <h3>{movie.title}</h3>
+                    <img src={MOVIE_DB_URL + movie.backdrop_path} alt="" />
+                    <h3>{movie.overview}</h3>
+                    {movie.id}
+                    <button onClick={handleLike}>Не нравится</button>
+                    <button onClick={handleDislike}>Нравится</button>
+                </section>
+            )}
 
             <div className={styles.notification}>
                 Вы не смогли выбрать общий фильм. Выбрать случайный из фаворитов

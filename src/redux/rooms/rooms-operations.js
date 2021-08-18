@@ -39,10 +39,53 @@ const getMoviesInRoom = createAsyncThunk(
     'rooms/getMoviesInRoom',
     async (roomId, { rejectWithValue, _getState }) => {
         const options = {
-            roomId,
+            params: {
+                roomId,
+            },
         };
+
         try {
             const { data } = await axios.get(`/rooms`, options);
+            return data;
+        } catch (error) {
+            return rejectWithValue(error.message);
+        }
+    },
+);
+
+const voteLike = createAsyncThunk(
+    'rooms/voteLike',
+    async (movieId, roomId, { rejectWithValue, _getState }) => {
+        const options = {
+            body: {
+                like: true,
+                movieId,
+                roomId,
+            },
+        };
+
+        try {
+            const { data } = await axios.post(`/votes`, options);
+            return data;
+        } catch (error) {
+            return rejectWithValue(error.message);
+        }
+    },
+);
+
+const voteDislike = createAsyncThunk(
+    'rooms/voteDislike',
+    async (movieId, roomId, { rejectWithValue, _getState }) => {
+        const options = {
+            body: {
+                like: true,
+                movieId,
+                roomId,
+            },
+        };
+
+        try {
+            const { data } = await axios.post(`/votes`, options);
             return data;
         } catch (error) {
             return rejectWithValue(error.message);
@@ -54,6 +97,8 @@ const operations = {
     create,
     getMoviesInRoom,
     exit,
+    voteDislike,
+    voteLike,
 };
 
 export default operations;
