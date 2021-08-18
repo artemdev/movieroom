@@ -3,7 +3,7 @@ import roomsOperations from './rooms-operations';
 
 const initialState = {
     isOpen: false,
-    movies: [],
+    currentMovie: null,
 };
 
 const roomSlice = createSlice({
@@ -23,7 +23,13 @@ const roomSlice = createSlice({
             state.isOpen = false;
         },
         [roomsOperations.getMoviesInRoom.fulfilled](state, action) {
-            state.movies = action.payload;
+            state.currentMovie = action.payload;
+        },
+        [roomsOperations.voteLike.fulfilled](state, action) {
+            state.currentMovie = action.payload;
+        },
+        [roomsOperations.voteDislike.fulfilled](state, action) {
+            state.currentMovie = action.payload;
         },
     },
 });

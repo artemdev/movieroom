@@ -2,7 +2,6 @@ import { useEffect, Suspense, lazy } from 'react';
 import { useDispatch } from 'react-redux';
 import { Switch } from 'react-router-dom';
 import AppBar from './components/AppBar';
-// import PrivateRoute from './components/PrivateRoute';
 import PublicRoute from './components/PublicRoute';
 import PrivateRoute from './components/PrivateRoute';
 import Container from './components/Container';
