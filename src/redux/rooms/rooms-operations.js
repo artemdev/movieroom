@@ -2,7 +2,7 @@ import { createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
 import { token } from '../../services/api-auth';
 import { CREATE_ROOM_URL } from '../../helpers/routes';
-import * as API from '../../services/rooms-api';
+// import * as API from '../../services/rooms-api';
 
 const create = createAsyncThunk(
     'rooms/create',
@@ -45,7 +45,7 @@ const getMoviesInRoom = createAsyncThunk(
         };
 
         try {
-            const { data } = await axios.get(`/rooms`, options);
+            const { data } = await axios.get(`/votes`, options);
             return data;
         } catch (error) {
             return rejectWithValue(error.message);
@@ -55,7 +55,16 @@ const getMoviesInRoom = createAsyncThunk(
 
 const voteLike = createAsyncThunk(
     'rooms/voteLike',
-    async (movieId, roomId, { rejectWithValue, _getState }) => {
+    async ({ roomId, movieId }, { rejectWithValue, getState }) => {
+        const state = getState();
+
+        const persistedToken = state.auth.token;
+        token.set(persistedToken);
+
+        if (persistedToken === null) {
+            return rejectWithValue();
+        }
+
         const options = {
             body: {
                 like: true,
@@ -75,15 +84,20 @@ const voteLike = createAsyncThunk(
 
 const voteDislike = createAsyncThunk(
     'rooms/voteDislike',
-    async (movieId, roomId, { rejectWithValue, _getState }) => {
-        const options = {
-            body: {
-                like: true,
-                movieId,
-                roomId,
-            },
-        };
+    async ({ roomId, movieId }, { rejectWithValue, getState }) => {
+        const state = getState();
 
+        const persistedToken = state.auth.token;
+        token.set(persistedToken);
+
+        if (persistedToken === null) {
+            return rejectWithValue();
+        }
+        const options = {
+            like: false,
+            movieId,
+            roomId,
+        };
         try {
             const { data } = await axios.post(`/votes`, options);
             return data;

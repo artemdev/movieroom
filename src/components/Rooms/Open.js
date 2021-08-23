@@ -17,12 +17,15 @@ export default function RoomOpenResults(_props) {
     };
 
     const handleDislike = () => {
-        //send request to API with Vote
-        dispatch(roomsOperations.voteDislike(movie.id, roomOpened));
+        const movieId = movie.id.toString();
+        const options = { movieId, roomId: roomOpened };
+        dispatch(roomsOperations.voteDislike(options));
     };
 
     const handleLike = () => {
-        dispatch(roomsOperations.voteLike(movie.id, roomOpened));
+        const movieId = movie.id.toString();
+        const options = { movieId, roomId: roomOpened };
+        dispatch(roomsOperations.voteDislike(options));
     };
 
     useEffect(() => {
@@ -31,13 +34,11 @@ export default function RoomOpenResults(_props) {
 
     return (
         <div>
-            {/* <ul className={styles.gallery}> */}
             {movie && (
                 <section>
                     <h3>{movie.title}</h3>
                     <img src={MOVIE_DB_URL + movie.backdrop_path} alt="" />
                     <h3>{movie.overview}</h3>
-                    {movie.id}
                     <button onClick={handleLike}>Не нравится</button>
                     <button onClick={handleDislike}>Нравится</button>
                 </section>
