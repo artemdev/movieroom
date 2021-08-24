@@ -1,46 +1,105 @@
 .gallery {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 
 ul.gallery li {
-    margin-right: 10px;
-    list-style-type: none;
+  margin-right: 10px;
+  list-style-type: none;
 }
 
 .notification {
-    text-align: center;
-    margin-bottom: 20px;
+  text-align: center;
+  margin-bottom: 20px;
 }
 
 .btn {
-    width: 200px;
-    height: 50px;
-    display: block;
-    margin: 0 auto;
-    cursor: pointer;
-    text-transform: uppercase;
+  width: 200px;
+  height: 50px;
+  display: block;
+  margin: 0 auto;
+  cursor: pointer;
+  text-transform: uppercase;
 }
 
 .winnerTitle {
-    width: 100%;
-    text-align: center;
+  width: 100%;
+  text-align: center;
 }
 
 .winnerWrap {
-    border-radius: 50%;
-    text-align: center;
-    font-size: 4em;
-    margin-bottom: 30px;
+  border-radius: 50%;
+  text-align: center;
+  font-size: 4em;
+  margin-bottom: 30px;
 }
 
 .winnerVotes {
-    width: 100%;
-    text-align: center;
+  width: 100%;
+  text-align: center;
 }
 
 .winnerCongratulations {
-    margin-top: 20px;
-    text-align: center;
+  margin-top: 20px;
+  text-align: center;
+}
+
+.movieImage {
+  width: 420px;
+  max-width: 50%;
+  height: auto;
+  margin-right: 35px;
+}
+
+.roomMovies {
+  max-width: 1200px;
+}
+
+.movieInfo {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 75px;
+}
+
+.movieTitle {
+
+  /* //styleName: H1; */
+  font-family: Rubik;
+  font-size: 41px;
+  font-weight: 500;
+  line-height: 49px;
+  letter-spacing: 0em;
+  text-align: left;
+  color: white;
+}
+
+.actionButtons {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 50px;
+}
+
+.actionButtonDislike,
+.actionButtonLike {
+  width: 250px;
+  height: 50px;
+  border: none;
+  border-radius: 20px;
+  color: white;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+  cursor: pointer;
+}
+
+.actionButtonLike {
+  background: linear-gradient(90deg, #1d976c 99.99%, #5cfb97 100%);
+}
+
+.actionButtonDislike {
+  margin-right: 50px;
+  background: linear-gradient(
+        90deg,
+        #eb3349 0%,
+        rgba(244, 92, 67, 0.87) 100%
+    );
 }
