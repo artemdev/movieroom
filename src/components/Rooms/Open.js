@@ -12,9 +12,9 @@ export default function RoomOpenResults(_props) {
         window.location = '/collections';
     }
 
-    const exitRoom = () => {
-        dispatch(roomsOperations.exit());
-    };
+    // const exitRoom = () => {
+    //     dispatch(roomsOperations.exit());
+    // };
 
     const handleDislike = () => {
         const movieId = movie.id.toString();
@@ -33,24 +33,49 @@ export default function RoomOpenResults(_props) {
     }, [dispatch, roomOpened]);
 
     return (
-        <div>
+        <div className={styles.roomMovies}>
             {movie && (
-                <section>
-                    <h3>{movie.title}</h3>
-                    <img src={MOVIE_DB_URL + movie.backdrop_path} alt="" />
-                    <h3>{movie.overview}</h3>
-                    <button onClick={handleLike}>Не нравится</button>
-                    <button onClick={handleDislike}>Нравится</button>
-                </section>
+                <div className={styles.movieInfo}>
+                    <img
+                        className={styles.movieImage}
+                        src={MOVIE_DB_URL + movie.poster_path}
+                        alt=""
+                    />
+
+                    <section>
+                        <h3 className={styles.movieTitle}>{movie.title}</h3>
+                        <p className={styles.originalTitle}>
+                            {movie.original_title}
+                        </p>
+                        <p>{movie.overview}</p>
+                        <p>
+                            Рейтинг {movie.vote_average} из {movie.vote_count}
+                        </p>
+                        <p>{movie.release_date}</p>
+
+                        <p>{movie.overview}</p>
+                    </section>
+                </div>
             )}
 
-            <div className={styles.notification}>
-                Вы не смогли выбрать общий фильм. Выбрать случайный из фаворитов
+            <div className={styles.actionButtons}>
+                <button
+                    className={styles.actionButtonDislike}
+                    onClick={handleDislike}
+                >
+                    Не нравится
+                </button>
+                <button
+                    className={styles.actionButtonLike}
+                    onClick={handleLike}
+                >
+                    Нравится
+                </button>
             </div>
 
-            <button onClick={exitRoom} className={styles.btn}>
+            {/* <button onClick={exitRoom} className={styles.btn}>
                 CLOSE ROOM
-            </button>
+            </button> */}
         </div>
     );
 }

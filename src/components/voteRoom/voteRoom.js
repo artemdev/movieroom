@@ -1,13 +1,7 @@
 import { useState, useEffect } from 'react';
 import { getCollection, getGenres, getCredits } from '../../service/service';
-import { lazy, Suspense } from 'react';
-import SwiperCore, { Navigation, Pagination, Scrollbar, A11y } from 'swiper';
+import SwiperCore, { Navigation, Scrollbar, A11y } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
-// import {
-//     ThumbUpAltOutlined,
-//     ThumbDownAltOutlined,
-//     Translate,
-// } from '@material-ui/icons';
 import s from './voteRoom.module.css';
 import 'swiper/swiper-bundle.min.css';
 import imageNotFound from '../../images/imageNotFound.png';
@@ -64,12 +58,6 @@ function VoteRoom() {
         getCredits(oneFilm.id).then(credits => setCast(credits.cast));
     }, [oneFilm]);
 
-    // useEffect(() => {
-    //     console.log(oneFilm);
-    //     console.log(genres);
-    //     console.log(oneFilmGenre);
-    //     console.log(cast);
-    // });
     const moveNext = () => {
         if (index === movies.length - 1) {
             return;
