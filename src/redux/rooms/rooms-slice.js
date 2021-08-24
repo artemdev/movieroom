@@ -3,7 +3,9 @@ import roomsOperations from './rooms-operations';
 
 const initialState = {
     isOpen: false,
-    currentMovie: null,
+    currentMovie: {
+        isLoading: false,
+    },
 };
 
 const roomSlice = createSlice({
@@ -22,13 +24,28 @@ const roomSlice = createSlice({
         [roomsOperations.exit.fulfilled](state, _) {
             state.isOpen = false;
         },
-        [roomsOperations.getMoviesInRoom.fulfilled](state, action) {
-            state.currentMovie = action.payload;
+        [roomsOperations.voteLike.pending](state, _action) {
+            state.currentMovie.isLoading = true;
+        },
+        [roomsOperations.voteDislike.pending](state, _action) {
+            state.currentMovie.isLoading = true;
         },
         [roomsOperations.voteLike.fulfilled](state, action) {
             state.currentMovie = action.payload;
+            state.currentMovie.isLoading = false;
         },
         [roomsOperations.voteDislike.fulfilled](state, action) {
+            state.currentMovie = action.payload;
+            state.currentMovie.isLoading = false;
+        },
+        [roomsOperations.voteDislike.rejected](state, _action) {
+            state.currentMovie.isLoading = false;
+        },
+        [roomsOperations.voteLike.rejected](state, _action) {
+            state.currentMovie.isLoading = false;
+        },
+        [roomsOperations.getMovieInRoom.fulfilled](state, action) {
+            state.currentMovie.isLoading = false;
             state.currentMovie = action.payload;
         },
     },
