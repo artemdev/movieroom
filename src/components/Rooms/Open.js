@@ -17,61 +17,65 @@ export default function RoomOpenResults(_props) {
     // };
 
     const handleDislike = () => {
-        const movieId = movie.id.toString();
+        const movieId = movie && movie.id.toString();
         const options = { movieId, roomId: roomOpened };
         dispatch(roomsOperations.voteDislike(options));
     };
 
     const handleLike = () => {
-        const movieId = movie.id.toString();
+        const movieId = movie && movie.id.toString();
         const options = { movieId, roomId: roomOpened };
         dispatch(roomsOperations.voteDislike(options));
     };
 
     useEffect(() => {
-        dispatch(roomsOperations.getMoviesInRoom(roomOpened));
+        dispatch(roomsOperations.getMovieInRoom(roomOpened));
     }, [dispatch, roomOpened]);
 
     return (
         <div className={styles.roomMovies}>
-            {movie && (
-                <div className={styles.movieInfo}>
-                    <img
-                        className={styles.movieImage}
-                        src={MOVIE_DB_URL + movie.poster_path}
-                        alt=""
-                    />
+            {movie.title ? (
+                <>
+                    <div className={styles.movieInfo}>
+                        <img
+                            className={styles.movieImage}
+                            src={MOVIE_DB_URL + movie.poster_path}
+                            alt=""
+                        />
 
-                    <section>
-                        <h3 className={styles.movieTitle}>{movie.title}</h3>
-                        <p className={styles.originalTitle}>
-                            {movie.original_title}
-                        </p>
-                        <p>{movie.overview}</p>
-                        <p>
-                            Рейтинг {movie.vote_average} из {movie.vote_count}
-                        </p>
-                        <p>{movie.release_date}</p>
+                        <section>
+                            <h3 className={styles.movieTitle}>{movie.title}</h3>
+                            <p className={styles.originalTitle}>
+                                {movie.original_title}
+                            </p>
+                            <p>{movie.overview}</p>
+                            <p>
+                                Рейтинг {movie.vote_average} из{' '}
+                                {movie.vote_count}
+                            </p>
+                            <p>{movie.release_date}</p>
 
-                        <p>{movie.overview}</p>
-                    </section>
-                </div>
+                            <p>{movie.overview}</p>
+                        </section>
+                    </div>
+                    <div className={styles.actionButtons}>
+                        <button
+                            className={styles.actionButtonDislike}
+                            onClick={handleDislike}
+                        >
+                            Не нравится
+                        </button>
+                        <button
+                            className={styles.actionButtonLike}
+                            onClick={handleLike}
+                        >
+                            Нравится
+                        </button>
+                    </div>
+                </>
+            ) : (
+                'There is no movie'
             )}
-
-            <div className={styles.actionButtons}>
-                <button
-                    className={styles.actionButtonDislike}
-                    onClick={handleDislike}
-                >
-                    Не нравится
-                </button>
-                <button
-                    className={styles.actionButtonLike}
-                    onClick={handleLike}
-                >
-                    Нравится
-                </button>
-            </div>
 
             {/* <button onClick={exitRoom} className={styles.btn}>
                 CLOSE ROOM

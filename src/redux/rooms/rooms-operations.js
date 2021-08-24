@@ -35,8 +35,8 @@ const exit = createAsyncThunk(
     },
 );
 
-const getMoviesInRoom = createAsyncThunk(
-    'rooms/getMoviesInRoom',
+const getMovieInRoom = createAsyncThunk(
+    'rooms/getMovieInRoom',
     async (roomId, { rejectWithValue, _getState }) => {
         const options = {
             params: {
@@ -109,7 +109,7 @@ const voteDislike = createAsyncThunk(
 
 const operations = {
     create,
-    getMoviesInRoom,
+    getMovieInRoom,
     exit,
     voteDislike,
     voteLike,
