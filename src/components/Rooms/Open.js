@@ -2,84 +2,31 @@ import * as styles from './styles.module.css';
 import { useDispatch, useSelector } from 'react-redux';
 import { useEffect } from 'react';
 import { roomsOperations, roomsSelectors } from '../../redux/rooms';
-
+// import { authOperations } from '../../redux/auth';
+import RoomMovie from './RoomMovie';
+import Loader from './Loader';
+import Results from './Results';
 export default function RoomOpenResults(_props) {
     const roomOpened = useSelector(roomsSelectors.getIsOpen);
     const movie = useSelector(roomsSelectors.getCurrentMovie);
+
     const dispatch = useDispatch();
-    const MOVIE_DB_URL = 'https://image.tmdb.org/t/p/w500/';
+
     if (!roomOpened) {
         window.location = '/collections';
     }
 
-    // const exitRoom = () => {
-    //     dispatch(roomsOperations.exit());
-    // };
-
-    const handleDislike = () => {
-        const movieId = movie && movie.id.toString();
-        const options = { movieId, roomId: roomOpened };
-        dispatch(roomsOperations.voteDislike(options));
-    };
-
-    const handleLike = () => {
-        const movieId = movie && movie.id.toString();
-        const options = { movieId, roomId: roomOpened };
-        dispatch(roomsOperations.voteDislike(options));
-    };
+    const movieLoading = useSelector(roomsSelectors.getMovieIsLoading);
 
     useEffect(() => {
         dispatch(roomsOperations.getMovieInRoom(roomOpened));
     }, [dispatch, roomOpened]);
 
-    return (
+    return movieLoading ? (
+        <Loader />
+    ) : (
         <div className={styles.roomMovies}>
-            {movie.title ? (
-                <>
-                    <div className={styles.movieInfo}>
-                        <img
-                            className={styles.movieImage}
-                            src={MOVIE_DB_URL + movie.poster_path}
-                            alt=""
-                        />
-
-                        <section>
-                            <h3 className={styles.movieTitle}>{movie.title}</h3>
-                            <p className={styles.originalTitle}>
-                                {movie.original_title}
-                            </p>
-                            <p>{movie.overview}</p>
-                            <p>
-                                Рейтинг {movie.vote_average} из{' '}
-                                {movie.vote_count}
-                            </p>
-                            <p>{movie.release_date}</p>
-
-                            <p>{movie.overview}</p>
-                        </section>
-                    </div>
-                    <div className={styles.actionButtons}>
-                        <button
-                            className={styles.actionButtonDislike}
-                            onClick={handleDislike}
-                        >
-                            Не нравится
-                        </button>
-                        <button
-                            className={styles.actionButtonLike}
-                            onClick={handleLike}
-                        >
-                            Нравится
-                        </button>
-                    </div>
-                </>
-            ) : (
-                'There is no movie'
-            )}
-
-            {/* <button onClick={exitRoom} className={styles.btn}>
-                CLOSE ROOM
-            </button> */}
+            {movie.title ? <RoomMovie styles={styles} /> : <Results />}
         </div>
     );
 }

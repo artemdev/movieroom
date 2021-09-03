@@ -2,6 +2,7 @@ import styles from './styles.module.css';
 import Modal from './modal';
 import React, { useState, useEffect } from 'react';
 import Collection from './collection';
+import RoomOpened from '../Rooms/Open';
 import { roomsSelectors } from '../../redux/rooms';
 import { useSelector } from 'react-redux';
 import { fetchCollections } from '../../services/collections-api';
@@ -59,7 +60,9 @@ export default function Collections(props) {
             };
         }
     }, [show]);
-    return (
+    return roomOpened ? (
+        <RoomOpened />
+    ) : (
         <div className={styles.collections}>
             <h2 className={styles.collectionTitle}>
                 Выберите коллекцию фильмов для голосования

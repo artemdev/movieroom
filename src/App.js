@@ -30,80 +30,75 @@ function App() {
     }, [dispatch]);
 
     return (
-        <>
-            <Container>
-                <Switch>
-                    <Suspense fallback="Loading...">
-                        {/* <PublicRoute path="/login" exact redirectTo="/collections">
+        <Container>
+            <Switch>
+                <Suspense fallback="Loading...">
+                    <PublicRoute
+                        path="/"
+                        exact
+                        restricted
+                        redirectTo="/subscribe"
+                    >
+                        <SubscribeView />
+                    </PublicRoute>
+                    <PublicRoute
+                        path="/login"
+                        exact
+                        restricted
+                        redirectTo="/collections"
+                    >
                         <WelcomeView logo={<Logo />}>
                             <AppBar />
                             <LoginView />
                         </WelcomeView>
-                    </PublicRoute> */}
-                        <PublicRoute
-                            path="/"
-                            exact
-                            restricted
-                            redirectTo="/subscribe"
-                        >
-                            <SubscribeView />
-                        </PublicRoute>
-                        <PublicRoute
-                            path="/login"
-                            exact
-                            restricted
-                            redirectTo="/collections"
-                        >
-                            <WelcomeView logo={<Logo />}>
-                                <AppBar />
-                                <LoginView />
-                            </WelcomeView>
-                        </PublicRoute>
-                        <PublicRoute
-                            path="/register"
-                            exact
-                            restricted
-                            redirectTo="/login"
-                        >
-                            <WelcomeView logo={<Logo />}>
-                                <AppBar />
-                                <RegisterView />
-                            </WelcomeView>
-                        </PublicRoute>
-                        <PrivateRoute path="/verify" exact redirectTo="/">
-                            <VerifyView />
-                        </PrivateRoute>
-                        <PrivateRoute path="/collections" redirectTo="/login">
-                            <NavBarView />
-                            <Collections />
-                        </PrivateRoute>
-                        <PublicRoute path="/closed" redirectTo="/login">
-                            <NavBarView />
-                            <RoomClosed />
-                        </PublicRoute>
-                        <PublicRoute path="/rooms/open" redirectTo="/login">
-                            <NavBarView />
-                            <RoomOpen />
-                        </PublicRoute>
-                        <PublicRoute path="/voteRoom" redirectTo="/login">
-                            <NavBarView />
-                            <VoteRoom />
-                        </PublicRoute>
-                    </Suspense>
-                </Switch>
-                <ToastContainer
-                    position="top-right"
-                    autoClose={7000}
-                    hideProgressBar={false}
-                    newestOnTop={false}
-                    closeOnClick
-                    rtl={false}
-                    pauseOnFocusLoss
-                    draggable
-                    pauseOnHover
-                />
-            </Container>
-        </>
+                    </PublicRoute>
+                    <PublicRoute
+                        path="/register"
+                        exact
+                        restricted
+                        redirectTo="/login"
+                    >
+                        <WelcomeView logo={<Logo />}>
+                            <AppBar />
+                            <RegisterView />
+                        </WelcomeView>
+                    </PublicRoute>
+                    <PrivateRoute path="/verify" exact redirectTo="/">
+                        <VerifyView />
+                    </PrivateRoute>
+                    <PrivateRoute path="/collections" redirectTo="/login">
+                        <NavBarView />
+                        <Collections />
+                    </PrivateRoute>
+                    <PublicRoute path="/closed" redirectTo="/login">
+                        <NavBarView />
+                        <RoomClosed />
+                    </PublicRoute>
+
+                    <PrivateRoute path="/rooms/open" redirectTo="/login">
+                        <NavBarView />
+                        <RoomOpen />
+                    </PrivateRoute>
+
+                    <PublicRoute path="/voteRoom" redirectTo="/login">
+                        <NavBarView />
+                        <VoteRoom />
+                    </PublicRoute>
+                </Suspense>
+            </Switch>
+
+            <ToastContainer
+                position="top-right"
+                autoClose={7000}
+                hideProgressBar={false}
+                newestOnTop={false}
+                closeOnClick
+                rtl={false}
+                pauseOnFocusLoss
+                draggable
+                pauseOnHover
+            />
+        </Container>
     );
 }
 

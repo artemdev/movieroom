@@ -74,6 +74,36 @@ ul.gallery li {
   color: white;
 }
 
+.movieTitle,
+.originalTitle,
+.movieRating,
+.movieYear {
+  margin-bottom: 14px;
+}
+
+.originalTitle {
+  font-family: Rubik;
+  font-size: 26px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 31px;
+  letter-spacing: 0em;
+  text-align: left;
+  color: rgba(224, 224, 224, 1);
+}
+
+.movieRating {
+  color: rgba(255, 194, 245, 1);
+}
+
+.movieYear {
+  color: rgba(255, 255, 255, 1);
+}
+
+.movieOverview {
+  color: rgba(255, 255, 255, 1);
+}
+
 .actionButtons {
   display: flex;
   justify-content: center;
@@ -102,4 +132,19 @@ ul.gallery li {
         #eb3349 0%,
         rgba(244, 92, 67, 0.87) 100%
     );
+}
+
+.actionButtonDislike,
+.actionButtonLike {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.1em;
+}
+
+.likeImage,
+.dislikeImage {
+  margin-right: 10px;
+  width: 24px;
+  height: 21px;
 }
