@@ -21,7 +21,7 @@ const roomSlice = createSlice({
         [roomsOperations.create.rejected](state, _) {
             state.isOpen = false;
         },
-        [roomsOperations.exit.fulfilled](state, _) {
+        [roomsOperations.close.fulfilled](state, _) {
             state.isOpen = false;
         },
         [roomsOperations.voteLike.pending](state, _action) {
@@ -35,7 +35,7 @@ const roomSlice = createSlice({
             state.currentMovie.isLoading = false;
         },
         [roomsOperations.voteDislike.fulfilled](state, action) {
-            state.currentMovie = action.payload;
+            state.currentMovie = action.payload || {};
             state.currentMovie.isLoading = false;
         },
         [roomsOperations.voteDislike.rejected](state, _action) {
@@ -45,8 +45,8 @@ const roomSlice = createSlice({
             state.currentMovie.isLoading = false;
         },
         [roomsOperations.getMovieInRoom.fulfilled](state, action) {
+            state.currentMovie = action.payload || {};
             state.currentMovie.isLoading = false;
-            state.currentMovie = action.payload;
         },
     },
 });

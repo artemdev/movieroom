@@ -28,8 +28,8 @@ const create = createAsyncThunk(
         }
     },
 );
-const exit = createAsyncThunk(
-    'rooms/exit',
+const close = createAsyncThunk(
+    'rooms/close',
     async (_, { rejectWithValue, getState }) => {
         return true;
     },
@@ -110,7 +110,7 @@ const voteDislike = createAsyncThunk(
 const operations = {
     create,
     getMovieInRoom,
-    exit,
+    close,
     voteDislike,
     voteLike,
 };
