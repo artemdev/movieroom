@@ -9,17 +9,17 @@ export default function PrivateRoute({
 }) {
     const isLoggedIn = useSelector(authSelectors.getIsLoggedIn);
 
-    const isVerify = useSelector(authSelectors.getVerify);
+    // const isVerify = useSelector(authSelectors.getVerify);
 
-    let url = '/verify';
+    // let url = '/verify';
 
-    if ((isLoggedIn && isVerify) || (!isVerify && !isLoggedIn)) {
-        url = redirectTo;
-    }
+    // if ((isLoggedIn && isVerify) || (!isVerify && !isLoggedIn)) {
+    //     url = redirectTo;
+    // }
 
     return (
         <Route {...routeProps}>
-            {isLoggedIn ? children : <Redirect to={url} />}
+            {isLoggedIn ? children : <Redirect to={redirectTo} />}
         </Route>
     );
 }
