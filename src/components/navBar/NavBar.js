@@ -1,8 +1,7 @@
 import styles from './navBar.module.css';
 import logo from '../../images/logo.png';
 import { useDispatch, useSelector } from 'react-redux';
-import { authOperations } from '../../redux/auth';
-import { authSelectors } from '../../redux/auth/';
+import { authOperations, authSelectors } from '../../redux/auth';
 
 export default function NavBar() {
     const signIn = true;
