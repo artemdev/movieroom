@@ -1,5 +1,6 @@
 .navBar {
-  width: 1200px;
+
+  /* width: 1200px; */
   display: flex;
   justify-content: space-between;
   color: white;
@@ -104,4 +105,9 @@
 .btn:hover,
 .btn:focus {
   color: #c33764;
+}
+@media (max-width: 767px) {
+  .navBar {
+    max-width: 100%;
+  }
 }

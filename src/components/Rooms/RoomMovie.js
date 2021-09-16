@@ -29,7 +29,7 @@ export default function RoomMovie({ styles }) {
                     alt=""
                 />
 
-                <section>
+                <section className={styles.movieAbout}>
                     <h3 className={styles.movieTitle}>{movie.title}</h3>
                     <p className={styles.originalTitle}>
                         {movie.original_title}
