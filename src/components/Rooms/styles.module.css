@@ -148,3 +148,50 @@ ul.gallery li {
   width: 24px;
   height: 21px;
 }
+
+/* mobile */
+
+@media (max-width: 767px) {
+  .roomMovies {
+    max-width: 100%;
+  }
+
+  .actionButtons {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+  }
+
+  .actionButtonDislike {
+    margin-right: 0px;
+  }
+
+  .actionButtonLike {
+    margin-bottom: 10px;
+  }
+
+  .movieAbout {
+    max-width: 100%;
+  }
+
+  .movieInfo {
+    flex-direction: column;
+    margin-bottom: 20px;
+    margin-left: 10px;
+  }
+
+  .movieImage {
+    margin-bottom: 15px;
+  }
+
+  .movieTitle {
+    font-size: 1.5em;
+    line-height: 1.5em;
+    margin-bottom: 5px;
+  }
+
+  .originalTitle {
+    font-size: 1.2em;
+    margin-bottom: 5px;
+  }
+}
