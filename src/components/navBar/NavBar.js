@@ -2,6 +2,7 @@ import styles from './navBar.module.css';
 import logo from '../../images/logo.png';
 import { useDispatch, useSelector } from 'react-redux';
 import { authOperations, authSelectors } from '../../redux/auth';
+import { roomsSelectors } from '../../redux/rooms';
 
 export default function NavBar() {
     const signIn = true;
@@ -10,12 +11,13 @@ export default function NavBar() {
     const token = useSelector(authSelectors.getToken);
     const userName = useSelector(authSelectors.getUsername);
     const resultsPage = window.location.pathname === '/rooms/open';
+    const totalPeopleVoted = useSelector(roomsSelectors.getTotalPeopleVoted);
 
     return (
         <>
             <header className={styles.navBar}>
                 {resultsPage ? (
-                    'Идет голосование: проголосовало 3 учасника '
+                    `Идет голосование: проголосовало ${totalPeopleVoted} учасника`
                 ) : (
                     <div className={styles.headerLogo}>
                         <img className={styles.headerImage} src={logo} alt="" />

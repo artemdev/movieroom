@@ -9,7 +9,7 @@ export default function Results() {
     const MOVIE_DB_URL = 'https://image.tmdb.org/t/p/w500/';
     const roomId = useSelector(roomsSelectors.getIsOpen);
     const votes = useSelector(roomsSelectors.getResultsVotes);
-
+    const owners = new Set();
     const closeRoom = () => {
         dispatch(roomsOperations.close());
     };
@@ -46,6 +46,7 @@ export default function Results() {
                         </li>
                     );
                 })}
+                {owners.size}
             </ul>
 
             <button onClick={closeRoom}>CLOSE</button>
