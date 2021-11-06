@@ -45,13 +45,6 @@ ul.gallery li {
   text-align: center;
 }
 
-.movieImage {
-  width: 420px;
-  max-width: 50%;
-  height: auto;
-  margin-right: 35px;
-}
-
 .roomMovies {
   max-width: 1200px;
 }
@@ -181,7 +174,16 @@ ul.gallery li {
   }
 
   .movieImage {
-    margin-bottom: 15px;
+
+    /* margin-bottom: 15px; */
+  }
+
+  .movieImageWrap {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 100px;
   }
 
   .movieTitle {
@@ -194,4 +196,85 @@ ul.gallery li {
     font-size: 1.2em;
     margin-bottom: 5px;
   }
+}
+
+.movies {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.movie {
+  display: flex;
+  position: relative;
+
+  /* align-items: flex-start; */
+  justify-content: flex-start;
+  flex-direction: column;
+  width: 172px;
+  height: auto;
+  margin-right: 30px;
+  margin-bottom: 30px;
+}
+
+.movie:hover {
+  cursor: pointer;
+}
+
+.movieImage {
+  display: block;
+  height: 248px;
+  width: 100%;
+  margin-right: 35px;
+  margin-bottom: 0px;
+}
+
+.movieLikesWrap {
+
+  /* position: absolute;
+    bottom: 58px;
+    left: 0; */
+  background: #700e49;
+  height: 60px;
+  color: white;
+  width: 100%;
+  text-align: center;
+  vertical-align: middle;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.movieLikes {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #d04cb3;
+  width: 50%;
+  border-radius: 20px;
+  height: 40px;
+  font-size: 16px;
+  font-style: normal;
+}
+
+.movieLikeImage {
+  width: 24px;
+  height: 21px;
+  margin-right: 10px;
+}
+
+.movieTitle {
+  color: white;
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 31px;
+  letter-spacing: 0em;
+  text-align: left;
+}
+
+.movieYear {
+  color: #bdbdbd;
+  font-size: 16px;
 }

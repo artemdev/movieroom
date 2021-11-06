@@ -2,10 +2,10 @@ import * as styles from './styles.module.css';
 import { useDispatch, useSelector } from 'react-redux';
 import { useEffect } from 'react';
 import { roomsOperations, roomsSelectors } from '../../redux/rooms';
-// import { authOperations } from '../../redux/auth';
 import RoomMovie from './RoomMovie';
 import Loader from './Loader';
 import Results from './Results';
+
 export default function RoomOpenResults(_props) {
     const roomOpened = useSelector(roomsSelectors.getIsOpen);
     const movie = useSelector(roomsSelectors.getCurrentMovie);
@@ -27,6 +27,7 @@ export default function RoomOpenResults(_props) {
     ) : (
         <div className={styles.roomMovies}>
             {movie.title ? <RoomMovie styles={styles} /> : <Results />}
+            {/* {<RoomMovie styles={styles} />} */}
         </div>
     );
 }
