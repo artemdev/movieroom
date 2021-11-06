@@ -9,13 +9,19 @@ export default function NavBar() {
     const dispatch = useDispatch();
     const token = useSelector(authSelectors.getToken);
     const userName = useSelector(authSelectors.getUsername);
+    const resultsPage = window.location.pathname === '/rooms/open';
 
     return (
         <>
             <header className={styles.navBar}>
-                <div className={styles.headerLogo}>
-                    <img className={styles.headerImage} src={logo} alt="" />
-                </div>
+                {resultsPage ? (
+                    'Идет голосование: проголосовало 3 учасника '
+                ) : (
+                    <div className={styles.headerLogo}>
+                        <img className={styles.headerImage} src={logo} alt="" />
+                    </div>
+                )}
+
                 <div className={styles.headerMenu}>
                     {signIn ? (
                         <>

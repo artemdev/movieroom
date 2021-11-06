@@ -6,6 +6,7 @@ const initialState = {
     currentMovie: {
         isLoading: false,
     },
+    results: {},
 };
 
 const roomSlice = createSlice({
@@ -47,6 +48,9 @@ const roomSlice = createSlice({
         [roomsOperations.getMovieInRoom.fulfilled](state, action) {
             state.currentMovie = action.payload || {};
             state.currentMovie.isLoading = false;
+        },
+        [roomsOperations.getResultsInRoom.fulfilled](state, action) {
+            state.results = action.payload;
         },
     },
 });

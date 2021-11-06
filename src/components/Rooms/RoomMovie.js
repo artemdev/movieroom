@@ -15,7 +15,7 @@ export default function RoomMovie({ styles }) {
     const handleLike = () => {
         const movieId = movie && movie.id.toString();
         const options = { movieId, roomId: roomOpened };
-        dispatch(roomsOperations.voteDislike(options));
+        dispatch(roomsOperations.voteLike(options));
     };
 
     const roomOpened = useSelector(roomsSelectors.getIsOpen);
@@ -39,7 +39,7 @@ export default function RoomMovie({ styles }) {
                         {movie.vote_count}
                     </p>
                     <p className={styles.movieYear}>
-                        {movie.release_date.split('-')[0]}
+                        {movie.release_date && movie.release_date.split('-')[0]}
                     </p>
 
                     <p className={styles.movieOverview}>{movie.overview}</p>

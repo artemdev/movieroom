@@ -33,8 +33,10 @@ export default function Collections(props) {
     useEffect(() => {
         (async function () {
             const { data } = await fetchCollections();
-            setCurrentCollection(data[0]);
-            setCollections(data);
+            if (data) {
+                setCurrentCollection(data[0]);
+                setCollections(data);
+            }
         })();
     }, [props]);
 

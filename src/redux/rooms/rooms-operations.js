@@ -64,15 +64,11 @@ const voteLike = createAsyncThunk(
         if (persistedToken === null) {
             return rejectWithValue();
         }
-
         const options = {
-            body: {
-                like: true,
-                movieId,
-                roomId,
-            },
+            like: true,
+            movieId,
+            roomId,
         };
-
         try {
             const { data } = await axios.post(`/votes`, options);
             return data;
@@ -81,7 +77,29 @@ const voteLike = createAsyncThunk(
         }
     },
 );
+const getResultsInRoom = createAsyncThunk(
+    'rooms/getResultsInRoom',
+    async (roomId, { rejectWithValue, getState }) => {
+        const state = getState();
 
+        const persistedToken = state.auth.token;
+        token.set(persistedToken);
+
+        if (persistedToken === null) {
+            return rejectWithValue();
+        }
+        const options = {
+            roomId,
+        };
+
+        try {
+            const { data } = await axios.post(`/votes/results`, options);
+            return data;
+        } catch (error) {
+            return rejectWithValue(error.message);
+        }
+    },
+);
 const voteDislike = createAsyncThunk(
     'rooms/voteDislike',
     async ({ roomId, movieId }, { rejectWithValue, getState }) => {
@@ -110,6 +128,7 @@ const voteDislike = createAsyncThunk(
 const operations = {
     create,
     getMovieInRoom,
+    getResultsInRoom,
     close,
     voteDislike,
     voteLike,
