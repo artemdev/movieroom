@@ -77,6 +77,7 @@ const voteLike = createAsyncThunk(
         }
     },
 );
+
 const getResultsInRoom = createAsyncThunk(
     'rooms/getResultsInRoom',
     async (roomId, { rejectWithValue, getState }) => {

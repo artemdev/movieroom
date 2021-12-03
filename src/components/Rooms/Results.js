@@ -1,5 +1,5 @@
 import { useDispatch, useSelector } from 'react-redux';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { roomsOperations, roomsSelectors } from '../../redux/rooms';
 import * as styles from './styles.module.css';
 import like from '../../images/like.svg';
@@ -9,7 +9,9 @@ export default function Results() {
     const MOVIE_DB_URL = 'https://image.tmdb.org/t/p/w500/';
     const roomId = useSelector(roomsSelectors.getIsOpen);
     const votes = useSelector(roomsSelectors.getResultsVotes);
-    const owners = new Set();
+
+    let peopleVoted = 0;
+
     const closeRoom = () => {
         dispatch(roomsOperations.close());
     };
@@ -20,6 +22,7 @@ export default function Results() {
 
     return (
         <>
+            Идет голосование: проголосовало {peopleVoted} учасника
             <ul className={styles.movies}>
                 {Object.values(votes).map((vote, index) => {
                     return (
@@ -46,9 +49,7 @@ export default function Results() {
                         </li>
                     );
                 })}
-                {owners.size}
             </ul>
-
             <button onClick={closeRoom}>CLOSE</button>
         </>
     );

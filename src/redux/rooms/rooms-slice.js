@@ -3,6 +3,7 @@ import roomsOperations from './rooms-operations';
 
 const initialState = {
     isOpen: false,
+    peopleVoted: 0,
     currentMovie: {
         isLoading: false,
     },
@@ -50,7 +51,9 @@ const roomSlice = createSlice({
             state.currentMovie.isLoading = false;
         },
         [roomsOperations.getResultsInRoom.fulfilled](state, action) {
-            state.results = action.payload;
+            const { results, numberOfPeopleVoted } = action.payload;
+            state.results = results;
+            state.totalVoted = numberOfPeopleVoted;
         },
     },
 });
