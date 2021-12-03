@@ -63,6 +63,7 @@ export default function RegisterView() {
                             className={s.input}
                             type="email"
                             placeholder={Email}
+                            autocomplete="email"
                         />
 
                         <div className={s.error}>
@@ -78,6 +79,7 @@ export default function RegisterView() {
                             className={s.input}
                             type={hidePassword ? 'password' : 'text'}
                             placeholder={Password}
+                            autocomplete="current-password"
                         />
                         <div
                             className={

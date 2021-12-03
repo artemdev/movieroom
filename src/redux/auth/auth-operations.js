@@ -63,7 +63,6 @@ const logOut = createAsyncThunk(
     async (token, { rejectWithValue }) => {
         try {
             await axios.post('/auth/logout', token);
-            console.log('Log out with token', token);
             API.token.unset();
         } catch (error) {
             if (error.response.status === 401) {
@@ -95,7 +94,6 @@ const fetchCurrentUser = createAsyncThunk(
         API.token.set(persistedToken);
         try {
             const { data } = await API.fetchCurrentUser(persistedToken);
-
             return data;
         } catch (error) {
             if (error.response.status === 401) {

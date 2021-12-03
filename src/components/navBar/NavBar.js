@@ -1,8 +1,8 @@
 import styles from './navBar.module.css';
 import logo from '../../images/logo.png';
 import { useDispatch, useSelector } from 'react-redux';
-import { authOperations } from '../../redux/auth';
-import { authSelectors } from '../../redux/auth/';
+import { authOperations, authSelectors } from '../../redux/auth';
+import { roomsSelectors } from '../../redux/rooms';
 
 export default function NavBar() {
     const signIn = true;
@@ -10,12 +10,16 @@ export default function NavBar() {
     const dispatch = useDispatch();
     const token = useSelector(authSelectors.getToken);
     const userName = useSelector(authSelectors.getUsername);
+
     return (
         <>
             <header className={styles.navBar}>
-                <div className={styles.headerLogo}>
-                    <img className={styles.headerImage} src={logo} alt="" />
-                </div>
+                {
+                    <div className={styles.headerLogo}>
+                        <img className={styles.headerImage} src={logo} alt="" />
+                    </div>
+                }
+
                 <div className={styles.headerMenu}>
                     {signIn ? (
                         <>

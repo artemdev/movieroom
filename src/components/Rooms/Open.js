@@ -1,82 +1,33 @@
 import * as styles from './styles.module.css';
 import { useDispatch, useSelector } from 'react-redux';
+import { useEffect } from 'react';
 import { roomsOperations, roomsSelectors } from '../../redux/rooms';
+import RoomMovie from './RoomMovie';
+import Loader from './Loader';
+import Results from './Results';
 
 export default function RoomOpenResults(_props) {
     const roomOpened = useSelector(roomsSelectors.getIsOpen);
+    const movie = useSelector(roomsSelectors.getCurrentMovie);
+
     const dispatch = useDispatch();
+
     if (!roomOpened) {
         window.location = '/collections';
     }
-    const exitRoom = () => {
-        dispatch(roomsOperations.exit());
-    };
-    return (
-        <div>
-            <ul className={styles.gallery}>
-                <li>
-                    <section>
-                        <h3>movie name</h3>
-                        <img
-                            src="https://www.thedome.org/wp-content/uploads/2019/06/300x300-Placeholder-Image.jpg"
-                            alt=""
-                        />
-                    </section>
-                </li>
-                <li>
-                    <section>
-                        <h3>movie name</h3>
-                        <img
-                            src="https://www.thedome.org/wp-content/uploads/2019/06/300x300-Placeholder-Image.jpg"
-                            alt=""
-                        />
-                    </section>
-                </li>
-                <li>
-                    <section>
-                        <h3>movie name</h3>
-                        <img
-                            src="https://www.thedome.org/wp-content/uploads/2019/06/300x300-Placeholder-Image.jpg"
-                            alt=""
-                        />
-                    </section>
-                </li>
-                <li>
-                    <section>
-                        <h3>movie name</h3>
-                        <img
-                            src="https://www.thedome.org/wp-content/uploads/2019/06/300x300-Placeholder-Image.jpg"
-                            alt=""
-                        />
-                    </section>
-                </li>
-                <li>
-                    <section>
-                        <h3>movie name</h3>
-                        <img
-                            src="https://www.thedome.org/wp-content/uploads/2019/06/300x300-Placeholder-Image.jpg"
-                            alt=""
-                        />
-                    </section>
-                </li>
-                <li>
-                    <section>
-                        <h3>movie name</h3>
-                        <img
-                            src="https://www.thedome.org/wp-content/uploads/2019/06/300x300-Placeholder-Image.jpg"
-                            alt=""
-                        />
-                    </section>
-                </li>
-            </ul>
 
-            <div className={styles.notification}>
-                Вы не смогли выбрать общий фильм. Выбрать случайный из фаворитов
-            </div>
+    const movieLoading = useSelector(roomsSelectors.getMovieIsLoading);
 
-            <button onClick={exitRoom} className={styles.btn}>
-                CLOSE ROOM
-            </button>
+    useEffect(() => {
+        dispatch(roomsOperations.getMovieInRoom(roomOpened));
+    }, [dispatch, roomOpened]);
+
+    return movieLoading ? (
+        <Loader />
+    ) : (
+        <div className={styles.roomMovies}>
+            {movie.title ? <RoomMovie styles={styles} /> : <Results />}
+            {/* {<RoomMovie styles={styles} />} */}
         </div>
     );
 }
