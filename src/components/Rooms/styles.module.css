@@ -174,8 +174,6 @@ ul.gallery li {
   }
 
   .movieImage {
-
-    /* margin-bottom: 15px; */
   }
 
   .movieImageWrap {
@@ -208,8 +206,6 @@ ul.gallery li {
 .movie {
   display: flex;
   position: relative;
-
-  /* align-items: flex-start; */
   justify-content: flex-start;
   flex-direction: column;
   width: 172px;
@@ -231,10 +227,6 @@ ul.gallery li {
 }
 
 .movieLikesWrap {
-
-  /* position: absolute;
-    bottom: 58px;
-    left: 0; */
   background: #700e49;
   height: 60px;
   color: white;
