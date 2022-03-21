@@ -8,13 +8,6 @@
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
-
-    /* background-image: linear-gradient(
-            to right,
-            rgba(255, 78, 135, 0.9),
-            rgba(29, 38, 113, 0.9)
-        ),
-        url(../../images/); */
 }
 
 .main {

@@ -75,8 +75,6 @@
   justify-content: space-between;
   align-items: center;
   width: 100%;
-
-  /* padding: 20px; */
 }
 
 .collectionItem {
@@ -226,15 +224,6 @@
     align-items: center;
   }
 
-  /* .modalCollectionImageWrap {
-        width: 100%;
-    }
-    .modalCollectionImage {
-        width: 100%;
-    }
-    .modalCollectionBody {
-        width: 100%;
-    } */
   .placeholder {
     width: 30%;
   }
@@ -259,8 +248,6 @@
 
   .modalNext,
   .modalClose {
-
-    /* width: 130px; */
     width: 45%;
     margin-right: 0px;
   }
