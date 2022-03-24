@@ -25,5 +25,5 @@ yarn-error.log*
 .prettierrc
 .stylelintrc.json
 
-# Local Netlify folder
+
 .netlify
