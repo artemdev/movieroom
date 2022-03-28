@@ -185,9 +185,5 @@ export const fetchVerifiedStatus = async (email, password) => {
 };
 
 export const fetchCollection = async (id = 10) => {
-    // return await axios
-    //     .get(`https://api.themoviedb.org/3/collection/${id}?api_key=${API_KEY}`)
-    //     .then(({ data }) => data)
-    //     .catch(e => console.log(e));
     return mockup;
 };

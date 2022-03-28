@@ -2,8 +2,6 @@ import axios from 'axios';
 import { API_BACKEND } from '../helpers/routes';
 
 axios.defaults.baseURL = API_BACKEND;
-// axios.defaults.baseURL = 'http://localhost:4000';
-
 export const token = {
     set(token) {
         axios.defaults.headers.common.Authorization = `Bearer ${token}`;
